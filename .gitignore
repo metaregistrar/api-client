@@ -1,0 +1,12 @@
+.idea
+cache.properties
+composer.lock
+composer.phar
+bin/
+!bin/.gitkeep
+build/
+vendor/
+example/config.php
+sample-responses.json
+.phpunit.result.cache
+build.xml

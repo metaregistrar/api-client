@@ -1,0 +1,372 @@
+{
+  "responseId": "mapi1_ff458d574fa002544fc5b1d11dd616fdaa34ea7e",
+  "status": "ok",
+  "message": "The poll messages are attached",
+  "pollMessages": [
+    {
+      "id": 9568541,
+      "type": "ssl",
+      "handler": "provisioning/sslcreate",
+      "message": "certificate reference created",
+      "timestamp": 1557148601,
+      "pollData": {
+        "message": "certificate reference created",
+        "sslStep": "create_product",
+        "certificateId": 1817
+      }
+    },
+    {
+      "id": 9568542,
+      "type": "ssl",
+      "handler": "provisioning/sslcreate",
+      "message": "certificate requested",
+      "timestamp": 1557148602,
+      "pollData": {
+        "message": "certificate requested",
+        "sslStep": "create_product",
+        "certificateId": 1817
+      }
+    },
+    {
+      "id": 9568545,
+      "type": "ssl",
+      "handler": "provisioning/sslcreate",
+      "message": "certificate requested",
+      "timestamp": 1557149302,
+      "pollData": {
+        "message": "certificate requested",
+        "sslStep": "create_product",
+        "certificateId": 1818
+      }
+    },
+    {
+      "id": 9568546,
+      "type": "ssl",
+      "handler": "provisioning/sslcreate",
+      "message": "unknown",
+      "timestamp": 1557149302,
+      "pollData": {
+        "subMessages": [
+          {
+            "message_code": "create_cname",
+            "message": "dns not hosted with us; please add the cname to the dns of the domain",
+            "type": "update",
+            "dcvType": "DNS",
+            "domainName": "test1.example.com",
+            "cnameValue": "a_hash_should_be_here_but_this_is_a_dummy_api.comodoca.com",
+            "cname": "_676b2c95d75a4f0852d80753ac6091bc.test1.example.com"
+          },
+          {
+            "message_code": "create_cname",
+            "message": "dns not hosted with us; please add the cname to the dns of the domain",
+            "type": "update",
+            "dcvType": "DNS",
+            "domainName": "test2.example.com",
+            "cnameValue": "a_hash_should_be_here_but_this_is_a_dummy_api.comodoca.com",
+            "cname": "_676b2c95d75a4f0852d80753ac6091bc.test2.example.com"
+          },
+          {
+            "message_code": "create_cname",
+            "message": "dns not hosted with us; please add the cname to the dns of the domain",
+            "type": "update",
+            "dcvType": "DNS",
+            "domainName": "test3.example.com",
+            "cnameValue": "a_hash_should_be_here_but_this_is_a_dummy_api.comodoca.com",
+            "cname": "_676b2c95d75a4f0852d80753ac6091bc.test3.example.com"
+          },
+          {
+            "message_code": "create_cname",
+            "message": "dns not hosted with us; please add the cname to the dns of the domain",
+            "type": "update",
+            "dcvType": "DNS",
+            "domainName": "example.com",
+            "cnameValue": "a_hash_should_be_here_but_this_is_a_dummy_api.comodoca.com",
+            "cname": "_676b2c95d75a4f0852d80753ac6091bc.example.com"
+          }
+        ],
+        "sslStep": "prep_environment",
+        "certificateId": 1818
+      }
+    },
+    {
+      "id": 13226011,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-test-2020-06-03-11.nl' is completed",
+      "timestamp": 1591194472,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-test-2020-06-03-11.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-03T14:27:00+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-03T14:27:52+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226030,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-test-2020-04-21-01.nl' is completed",
+      "timestamp": 1592832310,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-test-2020-04-21-01.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-12T13:19:31+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-22T13:25:10+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226031,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer in domain 'sidn-transfer-test-2020-06-22-13-17-33-0.nl' is completed",
+      "timestamp": 1592832344,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-06-22-13-17-33-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-22T13:24:44+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-22T13:25:44+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226033,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-transfer-test-2020-06-22-13-17-33-0.nl' is completed",
+      "timestamp": 1592832591,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-06-22-13-17-33-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-22T13:29:07+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-22T13:29:51+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226034,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer in domain 'sidn-transfer-test-2020-06-30-12-37-20-0.nl' is completed",
+      "timestamp": 1593520794,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-06-30-12-37-20-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T12:38:31+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T12:39:54+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226035,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-transfer-test-2020-06-30-12-37-20-0.nl' is completed",
+      "timestamp": 1593522177,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-06-30-12-37-20-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T13:01:19+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T13:02:57+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226036,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'rtr-sidn-2020-06-30.nl' is completed",
+      "timestamp": 1593522717,
+      "pollData": {
+        "trnData": {
+          "name": "rtr-sidn-2020-06-30.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T13:10:11+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T13:11:57+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226037,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer in domain 'sidn-transfer-test-2020-06-30-13-13-54-0.nl' is completed",
+      "timestamp": 1593522952,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-06-30-13-13-54-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T13:14:30+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T13:15:52+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226039,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-2020-06-30-rrp-rtr.com' is pending",
+      "timestamp": 1593526042,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-2020-06-30-rrp-rtr.com",
+          "trStatus": "pending",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T14:05:55+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T14:07:22+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226040,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'sidn-2020-06-30-rrp-rtr.com' is completed",
+      "timestamp": 1593526733,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-2020-06-30-rrp-rtr.com",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T14:05:55+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-06-30T14:18:53+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226041,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer in domain 'sidn-2020-06-30-rtr-rrp.com' is completed",
+      "timestamp": 1594015391,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-2020-06-30-rtr-rrp.com",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-06-30T14:10:50+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-07-06T06:03:11+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226042,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'test-retag-2020-08-21-03.co.uk' has failed",
+      "timestamp": 1599812286,
+      "pollData": {
+        "trnData": {
+          "name": "test-retag-2020-08-21-03.co.uk",
+          "trStatus": "serverCancelled",
+          "reID": "metaregistrar",
+          "reDate": "2020-08-21T12:26:52+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-09-11T08:18:06+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226043,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer away domain 'test-retag-2020-08-21-04.co.uk' has failed",
+      "timestamp": 1599812286,
+      "pollData": {
+        "trnData": {
+          "name": "test-retag-2020-08-21-04.co.uk",
+          "trStatus": "serverCancelled",
+          "reID": "metaregistrar",
+          "reDate": "2020-08-21T12:32:35+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-09-11T08:18:06+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226044,
+      "type": "epp",
+      "handler": "ral/transfer",
+      "message": "Transfer in domain 'sidn-transfer-test-2020-09-11-08-16-33-0.nl' is completed",
+      "timestamp": 1599812378,
+      "pollData": {
+        "trnData": {
+          "name": "sidn-transfer-test-2020-09-11-08-16-33-0.nl",
+          "trStatus": "serverApproved",
+          "reID": "metaregistrar",
+          "reDate": "2020-09-11T08:17:24+00:00",
+          "acID": "metaregistrar",
+          "acDate": "2020-09-11T08:19:38+00:00"
+        }
+      }
+    },
+    {
+      "id": 13226045,
+      "type": "epp",
+      "handler": "ral/event/domain_delete",
+      "message": "Domain test-import-sub12m-domain-2020-09-11-3m.nl has been deleted",
+      "timestamp": 1599826836,
+      "pollData": {
+        "infData": {
+          "name": "test-import-sub12m-domain-2020-09-11-3m.nl",
+          "status": [
+            {
+              "status": "Domain has been deleted",
+              "s": "inactive"
+            }
+          ],
+          "contact": [],
+          "host": []
+        }
+      }
+    },
+    {
+      "id": 13226046,
+      "type": "epp",
+      "handler": "ral/event/domain_delete",
+      "message": "Domain test-import-sub12m-domain-2020-09-11-1m.nl has been deleted",
+      "timestamp": 1599832334,
+      "pollData": {
+        "infData": {
+          "name": "test-import-sub12m-domain-2020-09-11-1m.nl",
+          "status": [
+            {
+              "status": "Domain has been deleted",
+              "s": "inactive"
+            }
+          ],
+          "contact": [],
+          "host": []
+        }
+      }
+    }
+  ],
+  "resultCount": 20,
+  "totalWaiting": 34
+}

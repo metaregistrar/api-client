@@ -1,0 +1,18 @@
+{
+  "postalInfo": {
+    "type": "loc",
+    "name": "Test User",
+    "org": "Metaregistrar",
+    "addr": {
+      "street": [
+        "Noothoven van Goorstraat 11E"
+      ],
+      "city": "Gouda",
+      "sp": "Zuid holland",
+      "pc": "2806RA",
+      "cc": "NL"
+    }
+  },
+  "voice": "+31.12345678",
+  "email": "john@metaregistrar.com"
+}

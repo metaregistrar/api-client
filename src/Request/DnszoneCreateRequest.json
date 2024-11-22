@@ -1,0 +1,27 @@
+{
+  "name": "zerg-controlpanel-test-2019-10-09-03.com",
+  "premium": false,
+  "records": [
+    {
+      "name": "zerg-controlpanel-test-2019-10-09-03.com",
+      "type": "NS",
+      "ttl": "3600",
+      "content": "ns1.yourdomainprovider.net.",
+      "disabled": false
+    },
+    {
+      "name": "zerg-controlpanel-test-2019-10-09-03.com",
+      "type": "NS",
+      "ttl": "3600",
+      "content": "ns2.yourdomainprovider.net.",
+      "disabled": false
+    },
+    {
+      "name": "zerg-controlpanel-test-2019-10-09-03.com",
+      "type": "NS",
+      "ttl": "3600",
+      "content": "ns3.yourdomainprovider.net.",
+      "disabled": false
+    }
+  ]
+}

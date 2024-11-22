@@ -1,0 +1,32 @@
+{
+  "responseId": "mapi1_49904cd15bc364397d7ff84c03c06d0140836df4",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "contact": {
+    "id": "MET_1k7060k6491872ecc51f",
+    "roid": "26y-ralcont",
+    "status": ["ok"],
+    "postalInfo": {
+      "name": "Test User",
+      "org": "Metaregistrar",
+      "addr": {
+        "street": [
+          "Noothoven van Goorstraat 11E"
+        ],
+        "city": "Gouda",
+        "sp": "Zuid holland",
+        "pc": "2806RA",
+        "cc": "NL"
+      }
+    },
+    "voice": "+31.12345678",
+    "fax": "",
+    "email": "john@metaregistrar.com",
+    "clID": "metaregistrar",
+    "crID": "metaregistrar",
+    "crDate": "2023-06-20T11:02:06+00:00",
+    "upID": "metaregistrar",
+    "upDate": "2023-06-20T11:02:06+00:00",
+    "property": []
+  }
+}

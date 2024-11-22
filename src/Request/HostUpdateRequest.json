@@ -1,0 +1,15 @@
+{
+  "hostname": "ns3.zerg-test-controlpanel-2023-06-09-01.frl",
+  "add": [
+    {
+      "ipAddress": "213.249.80.252",
+      "ip": "v4"
+    }
+  ],
+  "rem": [
+    {
+      "ipAddress": "213.249.80.251",
+      "ip": "v4"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ruleset name="Metaregistrar phpMD standards"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
+                     http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="
+                     http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>
+        Metaregistrar phpMD standards
+    </description>
+
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="BooleanArgumentFlag" />
+        <exclude name="ElseExpression" />
+        <exclude name="StaticAccess" />
+        <exclude name="IfStatementAssignment" />
+    </rule>
+
+    <rule ref="rulesets/unusedcode.xml">
+        <!-- we turn this back on as soon as an exception for inherited/implemented methods is available-->
+        <exclude name="UnusedFormalParameter"/>
+        <exclude name="UnusedPrivateField"/>
+    </rule>
+
+    <rule ref="rulesets/codesize.xml" >
+        <exclude name="TooManyFields"/>
+    </rule>
+
+
+    <rule ref="rulesets/controversial.xml" />
+
+    <rule ref="rulesets/design.xml" />
+
+    <rule ref="rulesets/naming.xml">
+        <exclude name="BooleanGetMethodName"/>
+        <exclude name="ShortVariable" />
+        <exclude name="LongVariable" />
+        <exclude name="ShortClassName" />
+    </rule>
+
+    <exclude-pattern>Tests/*</exclude-pattern>
+
+</ruleset>

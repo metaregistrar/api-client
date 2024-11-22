@@ -1,0 +1,23 @@
+{
+  "name": "zerg-test-controlpanel-2023-06-14-06.frl",
+  "registrant": "MET_1k7060d648828c9ba3fa",
+  "contact": [
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "admin"
+    },
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "tech"
+    },
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "billing"
+    }
+  ],
+  "nameservers": [
+    "ns3.yourdomainprovider.net",
+    "ns1.yourdomainprovider.net",
+    "ns2.yourdomainprovider.net"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "responseId": "mapi1_3c4693ddeeb5bf90462b777cd5ec589136503759",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "domain": {
+    "name": "zerg-test-controlpanel-2023-06-14-03.frl",
+    "exDate": "2028-06-13T23:59:59+00:00"
+  }
+}

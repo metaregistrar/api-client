@@ -1,0 +1,11 @@
+{
+  "responseId": "mapi1_1e4bb1aaf936ab42a46157613147762a94cf37e8",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "domain": {
+    "name": "zerg-restore-2019-10-07-02.frl",
+    "reID": "metaregistrar",
+    "reDate": "2023-06-23T09:46:18+00:00",
+    "acDate": "2023-06-28T09:46:18+00:00"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "responseId": "mapi1_571785ac5542f8029d681fd10fb9781ff7e57f4c",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "dnsZone": {
+    "name": "zerg-controlpanel-test-2019-10-09-03.com",
+    "premium": false,
+    "records": [
+      {
+        "name": "zerg-controlpanel-test-2019-10-09-03.com",
+        "type": "SOA",
+        "ttl": "3600",
+        "content": "a.misconfigured.dns.server.invalid. hostmaster.zerg-controlpanel-test-2019-10-09-03.com. 2023062302 10800 3600 604800 3600",
+        "disabled": false
+      },
+      {
+        "name": "zerg-controlpanel-test-2019-10-09-03.com",
+        "type": "NS",
+        "ttl": "3600",
+        "content": "ns1.yourdomainprovider.net.",
+        "disabled": false
+      },
+      {
+        "name": "zerg-controlpanel-test-2019-10-09-03.com",
+        "type": "NS",
+        "ttl": "3600",
+        "content": "ns2.yourdomainprovider.net.",
+        "disabled": false
+      },
+      {
+        "name": "zerg-controlpanel-test-2019-10-09-03.com",
+        "type": "NS",
+        "ttl": "3600",
+        "content": "ns3.yourdomainprovider.net.",
+        "disabled": false
+      }
+    ],
+    "keyData": [
+      {
+        "flags": "257",
+        "protocol": "3",
+        "alg": "13",
+        "pubKey": "bghGqzMPTJec1rN0yLas8ylwTvDmWi6DMAvFwkCyyxnTH/UUO6fE8VgyP/gsQpF1PLbVwRycRd9hqMqJWSVoNw=="
+      }
+    ],
+    "dsData": [
+      {
+        "keyTag": "3689",
+        "alg": "13",
+        "digestType": "1",
+        "digest": "e3755114ff75f3fed6b5f1c57cf63a0854ce8c55",
+        "keyData": {
+          "flags": "257",
+          "protocol": "3",
+          "alg": "13",
+          "pubKey": "bghGqzMPTJec1rN0yLas8ylwTvDmWi6DMAvFwkCyyxnTH/UUO6fE8VgyP/gsQpF1PLbVwRycRd9hqMqJWSVoNw=="
+        }
+      },
+      {
+        "keyTag": "3689",
+        "alg": "13",
+        "digestType": "2",
+        "digest": "f5b25f8bc8cf069fa4eddf34183fe443299ab6bab421ac2e15194b6ef3c44cc5",
+        "keyData": {
+          "flags": "257",
+          "protocol": "3",
+          "alg": "13",
+          "pubKey": "bghGqzMPTJec1rN0yLas8ylwTvDmWi6DMAvFwkCyyxnTH/UUO6fE8VgyP/gsQpF1PLbVwRycRd9hqMqJWSVoNw=="
+        }
+      },
+      {
+        "keyTag": "3689",
+        "alg": "13",
+        "digestType": "4",
+        "digest": "f21789ed640f6aa18db91e3c9604938ecd1538d4e071d0b86b4797b2db0148bb0af7b5c7aad21884a53a9dbff06ed054",
+        "keyData": {
+          "flags": "257",
+          "protocol": "3",
+          "alg": "13",
+          "pubKey": "bghGqzMPTJec1rN0yLas8ylwTvDmWi6DMAvFwkCyyxnTH/UUO6fE8VgyP/gsQpF1PLbVwRycRd9hqMqJWSVoNw=="
+        }
+      }
+    ]
+  }
+}

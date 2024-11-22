@@ -1,0 +1,6 @@
+{
+  "response_id": "1_0a407cb0634a56374ba80f863fda53ae37fd0042",
+  "status": "error",
+  "error_code": "does_not_exist",
+  "error_message": "This server does not exist"
+}

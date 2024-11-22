@@ -1,0 +1,24 @@
+{
+  "name": "zerg-restore-2019-10-07-02.frl",
+  "registrant": "MET_1k7060d648828c9ba3fa",
+  "authorizationCode":"QG~x$,_{^m?K9n~*",
+  "contact": [
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "admin"
+    },
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "tech"
+    },
+    {
+      "id": "MET_1k7060d648828c9ba3fa",
+      "type": "billing"
+    }
+  ],
+  "nameservers": [
+    "ns3.yourdomainprovider.net",
+    "ns1.yourdomainprovider.net",
+    "ns2.yourdomainprovider.net"
+  ]
+}

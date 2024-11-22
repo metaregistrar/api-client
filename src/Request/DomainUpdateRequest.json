@@ -1,0 +1,52 @@
+{
+  "chg": {
+    "registrant": "MET_1k7060d648828c9ba3fa",
+    "autoRenew": true,
+    "privacy": false,
+    "regenerateAuthcode": false
+  },
+  "add": {
+    "contact": [
+      {
+        "id": "MET_1k7060e6489a4ac4a849",
+        "type": "admin"
+      }
+    ],
+    "nameservers":[
+        "ns3.yourdomainprovider.net"
+    ],
+    "status": [],
+    "keyData": [
+      {
+        "flags": "257",
+        "protocol": "3",
+        "alg": "13",
+        "pubKey": "OAntx2ErVDS/xTa0tHEm9tbkrDs8oDElEN3WDSR38FEgl8GX5MI2YjzqJGWIgHEeoitlO1+AzlgIEjfHhLwq7w=="
+      }
+    ]
+  },
+  "rem": {
+    "contact": [
+      {
+        "id": "MET_1k7060d648828c9ba3fa",
+        "type": "admin"
+      }
+    ],
+    "nameservers": [
+      "ns3.yourdomainprovider.net",
+      "ns1.yourdomainprovider.net",
+      "ns2.yourdomainprovider.net"
+    ],
+    "status": [
+      "clientTransferProhibited"
+    ],
+    "keyData": [
+      {
+        "flags": "257",
+        "protocol": "3",
+        "alg": "13",
+        "pubKey": "OAntx2ErVDS/xTa0tHEm9tbkrDs8oDElEN3WDSR38FEgl8GX5MI2YjzqJGWIgHEeoitlO1+AzlgIEjfHhLwq7w=="
+      }
+    ]
+  }
+}

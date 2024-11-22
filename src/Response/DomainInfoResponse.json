@@ -1,0 +1,43 @@
+{
+  "responseId": "mapi1_9368f9d07aca1ffbe6a0c39ec1e9f1a26dd34e36",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "domain": {
+    "name": "zerg-test-controlpanel-2023-06-23-02.frl",
+    "roid": "1jb-raldom",
+    "status": [
+      "ok"
+    ],
+    "registrant": "MET_1k7060d648828c9ba3fa",
+    "authorizationCode": "'C9N4jloWIIoxw>8",
+    "contact": [
+      {
+        "id": "MET_1k7060d648828c9ba3fa",
+        "type": "admin"
+      },
+      {
+        "id": "MET_1k7060d648828c9ba3fa",
+        "type": "tech"
+      },
+      {
+        "id": "MET_1k7060d648828c9ba3fa",
+        "type": "billing"
+      }
+    ],
+    "nameservers": [
+      "ns3.yourdomainprovider.net",
+      "ns1.yourdomainprovider.net",
+      "ns2.yourdomainprovider.net"
+    ],
+    "host": [],
+    "autoRenew": true,
+    "autoRenewPeriod": 12,
+    "privacy": false,
+    "clID": "metaregistrar",
+    "crID": "metaregistrar",
+    "crDate": "2023-06-23T09:40:22+00:00",
+    "upID": "metaregistrar",
+    "upDate": "2023-06-23T09:40:23+00:00",
+    "exDate": "2024-06-23T23:59:59+00:00"
+  }
+}

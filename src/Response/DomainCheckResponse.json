@@ -1,0 +1,22 @@
+{
+  "responseId": "mapi1_b2900fdd441382cd62fc28555f5c4c0b0a11c5ad",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "results": [
+    {
+      "name": "zerg-test-controlpanel-2023-06-09-08.frl",
+      "available": true,
+      "reason": "Domain is available for registration",
+      "premium": false
+    },
+    {
+      "name": "german.school",
+      "available": false,
+      "reason": "Domain is not available for registration",
+      "premium": true,
+      "premiumPrice": 22000,
+      "premiumRecurringPrice": 0,
+      "premiumPriceMessage": "This is only the premium price. The normal registration costs still applies."
+    }
+  ]
+}

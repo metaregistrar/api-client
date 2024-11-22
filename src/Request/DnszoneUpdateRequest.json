@@ -1,0 +1,20 @@
+{
+  "add":[
+    {
+      "name": "home.zerg-controlpanel-test-2019-10-09-03.com",
+      "type": "A",
+      "ttl": "3600",
+      "content": "127.0.0.1",
+      "disabled": false
+    }
+  ],
+  "rem":[
+    {
+      "name": "oldhome.zerg-controlpanel-test-2019-10-09-03.com",
+      "type": "A",
+      "ttl": "3600",
+      "content": "127.0.0.1",
+      "disabled": false
+    }
+  ]
+}

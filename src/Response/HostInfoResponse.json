@@ -1,0 +1,24 @@
+{
+  "responseId": "mapi1_d62dbe93b4f2d8ae74374d02975d88e4c7c9253a",
+  "status": "ok",
+  "message": "Command completed successfully",
+  "host": {
+    "name": "ns4.zerg-test-controlpanel-2023-06-09-01.frl",
+    "roid": "24-ralhost",
+    "status": [
+      {
+        "status": "No changes pending",
+        "s": "ok"
+      }
+    ],
+    "addr": [
+      {
+        "ipAddress": "213.249.80.252",
+        "ip": "v4"
+      }
+    ],
+    "clID": "metaregistrar",
+    "crID": "metaregistrar",
+    "crDate": "2023-06-12T00:00:00+00:00"
+  }
+}

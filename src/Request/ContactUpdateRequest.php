@@ -23,11 +23,11 @@ class ContactUpdateRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $url = 'contact';
+    protected $url = 'contact/{id}';
     /**
      * @var string
      */
-    protected $method = self::METHOD_POST;
+    protected $method = self::METHOD_PATCH;
 
     /**
      * @var string

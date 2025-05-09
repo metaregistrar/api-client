@@ -134,7 +134,6 @@
             <arg line="--configuration=${basedir}/phpunit.xml"/>
             <!--<arg line="&#45;&#45;coverage-html=build/artifacts/coverage"/>-->
             <arg line="--log-junit=build/artifacts/logs/junit.xml"/>
-            <arg line="src"/>
             <!--<arg line="&#45;&#45;coverage-clover=build/artifacts/logs/clover.xml"/>-->
             <!--<arg line="&#45;&#45;coverage-text"/>-->
         </exec>

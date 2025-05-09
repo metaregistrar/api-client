@@ -25,4 +25,40 @@ class DomainListRequest extends AbstractListRequest
      * @var string
      */
     protected $expectedResponse = DomainListResponse::class;
+
+    /**
+     * @param string $name
+     * @return void
+     */
+    public function setName(string $name): void
+    {
+        $this->setQueryArg('name', $name);
+    }
+
+    /**
+     * @param boolean $autoRenew
+     * @return void
+     */
+    public function setAutoRenew(bool $autoRenew): void
+    {
+        $this->setQueryArg('autorenew', $autoRenew);
+    }
+
+    /**
+     * @param boolean $crmId
+     * @return void
+     */
+    public function setCrmId(bool $crmId): void
+    {
+        $this->setQueryArg('crmId', $crmId);
+    }
+
+    /**
+     * @param string $status
+     * @return void
+     */
+    public function setStatus(string $status): void
+    {
+        $this->setQueryArg('status', $status);
+    }
 }

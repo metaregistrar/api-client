@@ -20,7 +20,10 @@ use Metaregistrar\Api\Client\Response\HostCreateResponse;
 class HostCreateRequest extends AbstractRequest
 {
     /**
+     * @var string
+     */
     protected $url = 'domain/{name}/host';
+
     /**
      * @var string
      */

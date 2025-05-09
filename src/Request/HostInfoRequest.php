@@ -21,7 +21,7 @@ class HostInfoRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $url ='host/{name}/host/{hostname}';
+    protected $url ='domain/{name}/host/{hostname}';
     /**
      * @var string
      */

@@ -15,7 +15,7 @@ use Metaregistrar\Api\Client\Annotation\DefaultValue;
  * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.NumberOfChildren)
  */
-class AbstractResponse implements ResponseInterface
+abstract class AbstractResponse implements ResponseInterface
 {
     /**
      * @var string

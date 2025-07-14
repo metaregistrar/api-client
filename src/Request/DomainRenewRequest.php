@@ -21,7 +21,7 @@ class DomainRenewRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $url = 'domain/{name}';
+    protected $url = 'domain/{name}/renew';
     /**
      * @var string
      */

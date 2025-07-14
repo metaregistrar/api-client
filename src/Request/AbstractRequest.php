@@ -355,4 +355,14 @@ abstract class AbstractRequest implements RequestInterface
         $this->expectedErrorResponse = $expectedErrorResponse;
         return $this;
     }
+
+    /**
+     * @param string $name
+     * @param mixed  $value
+     * @return void
+     */
+    protected function setQueryArg(string $name, $value): void
+    {
+        $this->queryParts[$name] = $name . '=' . urlencode($value);
+    }
 }

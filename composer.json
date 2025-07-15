@@ -1,6 +1,6 @@
 {
     "name": "metaregistrar\/api-client",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "Provides connectivity with the Metaregistrar rest api",
     "license": "proprietary",
     "keywords": [

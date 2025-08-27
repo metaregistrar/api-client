@@ -21,7 +21,7 @@ class DnszoneDeleteRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $url = 'dnszone/{zone}';
+    protected $url = 'dnszone/{name}';
     /**
      * @var string
      */
@@ -33,11 +33,12 @@ class DnszoneDeleteRequest extends AbstractRequest
      * @Description("the name should be a IDN domain in punycode format")
      */
     protected $name='';
+    
     /**
      * @var array
      */
     protected $acceptableArgs = [
-        "zone"=>"string"
+        "name"=>"string"
     ];
 
     /**

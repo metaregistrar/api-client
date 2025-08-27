@@ -22,6 +22,16 @@ class DomainListRequest extends AbstractListRequest
     protected $method = self::METHOD_GET;
 
     /**
+     * @var string[]
+     */
+    protected $acceptableQueryArgs = [
+        'name' => 'string',
+        'autorenew' => 'boolean',
+        'crmId' => 'string',
+        'status' => 'string',
+    ];
+
+    /**
      * @var string
      */
     protected $expectedResponse = DomainListResponse::class;
@@ -45,10 +55,10 @@ class DomainListRequest extends AbstractListRequest
     }
 
     /**
-     * @param boolean $crmId
+     * @param string $crmId
      * @return void
      */
-    public function setCrmId(bool $crmId): void
+    public function setCrmId(string $crmId): void
     {
         $this->setQueryArg('crmId', $crmId);
     }

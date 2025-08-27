@@ -72,14 +72,6 @@ abstract class AbstractRequest implements RequestInterface
      */
     protected $acceptableDefaultArgs = [
     ];
-    /**
-     * @var string
-     */
-    private string $username;
-    /**
-     * @var string
-     */
-    private string $key;
 
 
     /**
@@ -116,11 +108,17 @@ abstract class AbstractRequest implements RequestInterface
     public function getUrl()
     {
         $url = $this->url;
+
         $this->mapArgs(get_object_vars($this));
-        foreach ($this->urlParams as $param => $value) {
-            $url = str_replace('{' . $param . '}', $value, $url);
+        $this->mapQueryArgs(get_object_vars($this));
+
+        if (preg_match('/[{}]/', $url)) {
+            foreach ($this->urlParams as $param => $value) {
+                $url = str_replace('{' . $param . '}', $value, $url);
+            }
         }
-        return $url . (count($this->queryParts) > 0 ? '?' . implode("&", $this->queryParts) : '');
+
+        return $url . (count($this->queryParts) > 0 ? '?' . http_build_query($this->queryParts) : '');
     }
 
     /**
@@ -134,63 +132,6 @@ abstract class AbstractRequest implements RequestInterface
         return null;
     }
 
-    /**
-     * @param array $queryArgs
-     * @return void
-     */
-    public function mapQueryArgs(array $queryArgs): void
-    {
-        $args = array_merge($this->acceptableQueryArgs, $this->acceptableQueryDefaultArgs);
-        foreach ($args as $k => $v) {
-            if (!isset($queryArgs[$k])) {
-                continue;
-            }
-            if (is_null($queryArgs[$k])) {
-                continue;
-            }
-            if ($v == 'boolean') {
-                $queryArgs[$k] = ($queryArgs[$k]=='true');
-            }
-            if ($v == 'integer') {
-                $queryArgs[$k] = intval($queryArgs[$k]);
-            }
-            if ($v == 'float') {
-                $queryArgs[$k] = floatval($queryArgs[$k]);
-            }
-            if (gettype($queryArgs[$k]) == $v) {
-                $this->$k = $queryArgs[$k];
-            }
-        }
-    }
-
-    /**
-     * @param array $args
-     * @return void
-     */
-    public function mapArgs(array $args): void
-    {
-        $acceptableArgs = array_merge($this->acceptableArgs, $this->acceptableDefaultArgs);
-        $urlParams = $this->urlParams;
-        foreach ($acceptableArgs as $k => $v) {
-            if (!isset($args[$k])) {
-                continue;
-            }
-            if (is_null($args[$k])) {
-                continue;
-            }
-            if ($v == 'integer') {
-                $args[$k] = intval($args[$k]);
-            }
-            if ($v == 'float') {
-                $args[$k] = floatval($args[$k]);
-            }
-            if (gettype($args[$k]) == $v) {
-                $this->$k = $args[$k];
-                $urlParams[$k] = $args[$k];
-            }
-        }
-        $this->urlParams = $urlParams;
-    }
 
     /**
      * @return string|null
@@ -288,42 +229,6 @@ abstract class AbstractRequest implements RequestInterface
     /**
      * @return string
      */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * @param string $username
-     * @return AbstractRequest
-     */
-    public function setUsername(string $username): AbstractRequest
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * @param string $key
-     * @return AbstractRequest
-     */
-    public function setKey(string $key): AbstractRequest
-    {
-        $this->key = $key;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getExpectedResponse()
     {
         return $this->expectedResponse;
@@ -364,6 +269,65 @@ abstract class AbstractRequest implements RequestInterface
      */
     protected function setQueryArg(string $name, $value): void
     {
-        $this->queryParts[$name] = $name . '=' . urlencode($value);
+        $this->queryParts[$name] = urlencode($value);
+    }
+
+
+    /**
+     * @param array $args
+     * @return void
+     */
+    public function mapArgs(array $args): void
+    {
+        $acceptableArgs = array_merge($this->acceptableArgs, $this->acceptableDefaultArgs);
+        $urlParams = $this->urlParams;
+        foreach ($acceptableArgs as $k => $v) {
+            if (!isset($args[$k])) {
+                continue;
+            }
+            if (is_null($args[$k])) {
+                continue;
+            }
+            if ($v == 'integer') {
+                $args[$k] = intval($args[$k]);
+            }
+            if ($v == 'float') {
+                $args[$k] = floatval($args[$k]);
+            }
+            if (gettype($args[$k]) == $v) {
+                $this->$k = $args[$k];
+                $urlParams[$k] = $args[$k];
+            }
+        }
+        $this->urlParams = $urlParams;
+    }
+
+    /**
+     * @param array $queryArgs
+     * @return void
+     */
+    public function mapQueryArgs(array $queryArgs): void
+    {
+        $args = array_merge($this->acceptableQueryArgs, $this->acceptableQueryDefaultArgs);
+        foreach ($args as $k => $v) {
+            if (!isset($queryArgs[$k])) {
+                continue;
+            }
+            if (is_null($queryArgs[$k])) {
+                continue;
+            }
+            if ($v == 'boolean') {
+                $queryArgs[$k] = ($queryArgs[$k]=='true');
+            }
+            if ($v == 'integer') {
+                $queryArgs[$k] = intval($queryArgs[$k]);
+            }
+            if ($v == 'float') {
+                $queryArgs[$k] = floatval($queryArgs[$k]);
+            }
+            if (gettype($queryArgs[$k]) == $v) {
+                $this->queryParts[$k] = $queryArgs[$k];
+            }
+        }
     }
 }

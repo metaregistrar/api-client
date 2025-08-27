@@ -16,7 +16,7 @@ use Metaregistrar\Api\Client\Response\PollResponse;
  * @package Metaregistrar\Api\Client\Request
  * @ExclusionPolicy("all")
  */
-class PollRequest extends AbstractRequest
+class PollRequest extends AbstractListRequest
 {
     /**
      * @var string
@@ -36,7 +36,7 @@ class PollRequest extends AbstractRequest
     /**
      * @var array
      */
-    protected $acceptableQueryArgs = ["limit"=>"integer","autoAck"=>'boolean'];
+    protected $acceptableQueryArgs = [ 'autoAck' => 'boolean' ];
 
     /**
      * @var integer
@@ -48,24 +48,6 @@ class PollRequest extends AbstractRequest
      * @var boolean
      */
     protected $autoAck=false;
-
-    /**
-     * @return integer
-     */
-    public function getLimit()
-    {
-        return $this->limit;
-    }
-
-    /**
-     * @param integer $limit
-     * @return PollRequest
-     */
-    public function setLimit(int $limit): PollRequest
-    {
-        $this->limit = $limit;
-        return $this;
-    }
 
     /**
      * @return boolean

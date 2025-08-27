@@ -2,6 +2,11 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use DateTime;
+use DateTimeZone;
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerBuilder;
 use Metaregistrar\Api\Client\Fragment\Contact\Addr as ContactAddr;
 use Metaregistrar\Api\Client\Fragment\Contact\Contact;
 use Metaregistrar\Api\Client\Fragment\Contact\ContactProperty;
@@ -24,12 +29,23 @@ use Metaregistrar\Api\Client\Fragment\Host\Host;
 use Metaregistrar\Api\Client\Fragment\PollMessage;
 use Metaregistrar\Api\Client\Request\DomainCheckRequest;
 use Metaregistrar\Api\Client\Tests\TestTools\ModelTestCase;
+use Mockery;
 
 class SerializableClassTest extends ModelTestCase
 {
+    private Serializer $serializer;
+
     public function setUp(): void
     {
+        $this->serializer = SerializerBuilder::create()
+            ->setPropertyNamingStrategy(new IdenticalPropertyNamingStrategy())
+            ->build();
         parent::setUp();
+    }
+
+    public function tearDown(): void
+    {
+        Mockery::close();
     }
 
     public function provideSerializableClasses(): array
@@ -56,7 +72,9 @@ class SerializableClassTest extends ModelTestCase
             ]
         ];
 
-        return $this->getSerializableClassFiles($directories);
+        $files = $this->getSerializableClassFiles($directories);
+
+        return $files;
     }
 
     /**
@@ -68,6 +86,9 @@ class SerializableClassTest extends ModelTestCase
         $this->assertSerializableClass($className);
     }
 
+    /**
+     * @return array
+     */
     protected function getDefaultValues(): array
     {
         $keyData = new KeyData();
@@ -102,7 +123,7 @@ class SerializableClassTest extends ModelTestCase
 
 
         return [
-            'DateTime' => new \DateTime(), // ignored
+            'DateTime' => new DateTime('now', new DateTimeZone('UTC')), // ignored
             'Metaregistrar\Api\Client\Fragment\Contact\Addr' => $postAddr,
             'Metaregistrar\Api\Client\Fragment\Contact\Contact' => $contact,
             'Metaregistrar\Api\Client\Fragment\Contact\PostalInfo' => $postalInfo,
@@ -149,7 +170,6 @@ class SerializableClassTest extends ModelTestCase
     protected function getIgnoreProperties(): array
     {
         return [
-//            'Metaregistrar\\Api\\Client\\Fragment\\Domain\\Domain' => ['crDate', 'upDate', 'exDate'],
         ];
     }
 }

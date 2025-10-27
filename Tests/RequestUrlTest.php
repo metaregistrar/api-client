@@ -73,9 +73,9 @@ class RequestUrlTest extends TestCase
     {
 
         $reflectionClass = new ReflectionClass($className);
+        $params = [];
 
         if ($reflectionClass->hasMethod('__construct')) {
-            $params = [];
             foreach ($reflectionClass->getConstructor()->getParameters() as $param) {
                 $type = $param->getType() ?? 'string';
 
@@ -88,6 +88,8 @@ class RequestUrlTest extends TestCase
             /** @var AbstractRequest $request */
             $request = $reflectionClass->newInstance();
         }
+
+        $allParams = $params;
 
 
         $reflectionClass = new ReflectionClass($request);
@@ -112,9 +114,23 @@ class RequestUrlTest extends TestCase
 
             $value = ListRequestsTest::generateValue($params[0]->getType());
             $request->{$method->getName()}($value);
+            $allParams[$params[0]->getName()] = $value;
         }
 
+        $urlTemplate = $reflectionClass->getProperty('url')->getValue($request);
+
         $url = $request->getUrl();
+
+        foreach ($allParams as $name => $value) {
+            if (empty($value)) {
+                continue;
+            }
+            if (preg_match('{'. $name . '}', $urlTemplate)) {
+                $urlTemplate = preg_replace('#\{' . $name . '}#', $value, $urlTemplate);
+            }
+        }
+
+        $this->assertSame($urlTemplate, preg_replace('/\?.*$/', '', $url));
 
         $this->assertStringNotContainsString('{', $url);
         $this->assertStringNotContainsString('}', $url);

@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
  * The AbstractRequest containing the way to serialize and deserialize requests
  * @ExclusionPolicy("all")
  */
-class AbstractListRequest extends AbstractRequest
+abstract class AbstractListRequest extends AbstractRequest
 {
 
     /**
@@ -25,8 +25,8 @@ class AbstractListRequest extends AbstractRequest
      * @var string[]
      */
     protected $acceptableQueryDefaultArgs = [
-        "start" => "string",
-        "limit" => "string",
+        "start" => "integer",
+        "limit" => "integer",
         'orderBy' => "string",
         'orderDirection' => "string"
     ];
@@ -75,6 +75,7 @@ class AbstractListRequest extends AbstractRequest
      */
     public function setStart(int $start): AbstractRequest
     {
+        $this->setQueryArg('start', $start);
         $this->start = $start;
         return $this;
     }
@@ -99,6 +100,7 @@ class AbstractListRequest extends AbstractRequest
      */
     public function setLimit(int $limit): AbstractRequest
     {
+        $this->setQueryArg('limit', $limit);
         $this->limit = $limit;
         return $this;
     }
@@ -125,6 +127,7 @@ class AbstractListRequest extends AbstractRequest
      */
     public function setOrderDirection(string $orderDirection): AbstractListRequest
     {
+        $this->setQueryArg('orderDirection', $orderDirection);
         $this->orderDirection = $orderDirection;
         return $this;
     }
@@ -135,6 +138,7 @@ class AbstractListRequest extends AbstractRequest
      */
     public function setOrderBy(string $orderBy): AbstractListRequest
     {
+        $this->setQueryArg('orderBy', $orderBy);
         $this->orderBy = $orderBy;
         return $this;
     }

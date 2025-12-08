@@ -27,6 +27,17 @@ class ContactListRequest extends AbstractListRequest
     protected $expectedResponse = ContactListResponse::class;
 
     /**
+     * @var string[]
+     */
+    protected $acceptableQueryArgs = [
+        'email' => 'string',
+        'country' => 'string',
+        'crmId' => 'string',
+        'org' => 'string',
+        'name' => 'string',
+    ];
+
+    /**
      * @param string $country
      * @return void
      */

@@ -148,7 +148,7 @@ class Domain
      */
     #[Type('DateTime')]
     #[SerializedName('crDate')]
-    #[expose]
+    #[Expose]
     protected $crDate;
 
     /**
@@ -165,7 +165,7 @@ class Domain
      */
     #[Type('DateTime')]
     #[SerializedName('upDate')]
-    #[expose]
+    #[Expose]
     protected $upDate;
 
     /**
@@ -173,7 +173,7 @@ class Domain
      */
     #[Type('DateTime')]
     #[SerializedName('exDate')]
-    #[expose]
+    #[Expose]
     protected $exDate;
 
     /**
@@ -195,7 +195,7 @@ class Domain
      */
     #[Type('array')]
     #[SerializedName('metadata')]
-    #[expose]
+    #[Expose]
     protected $metadata;
 
 

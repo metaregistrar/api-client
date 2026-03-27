@@ -103,7 +103,7 @@ class Contact
      */
     #[Type('DateTime')]
     #[SerializedName('crDate')]
-    #[expose]
+    #[Expose]
     protected $crDate;
 
     /**
@@ -120,7 +120,7 @@ class Contact
      */
     #[Type('DateTime')]
     #[SerializedName('upDate')]
-    #[expose]
+    #[Expose]
     protected $upDate;
 
     /**
@@ -128,7 +128,7 @@ class Contact
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Contact\ContactProperty>')]
     #[SerializedName('property')]
-    #[expose]
+    #[Expose]
     protected $property;
 
     /**
@@ -145,7 +145,7 @@ class Contact
      */
     #[Type('array')]
     #[SerializedName('metadata')]
-    #[expose]
+    #[Expose]
     protected $metadata;
 
     /**

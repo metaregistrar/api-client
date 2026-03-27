@@ -71,7 +71,7 @@ class Host
      */
     #[Type('DateTime')]
     #[SerializedName('crDate')]
-    #[expose]
+    #[Expose]
     protected $crDate;
 
     /**

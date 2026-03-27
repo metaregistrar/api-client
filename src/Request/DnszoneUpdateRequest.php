@@ -29,9 +29,9 @@ class DnszoneUpdateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a name for the zone")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('You must supply a name for the zone')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
     /**
      * @var array

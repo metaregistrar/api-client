@@ -34,27 +34,27 @@ class DomainTransferRequest extends AbstractRequest
     protected $expectedResponse = DomainTransferResponse::class;
     /**
      * @var string
-     * @MustBeFilled("You must supply a name for the domain")
-     * @Description("the name should be a IDN domain in punycode format")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a name for the domain')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
 
     /**
      * @var string
-     * @MustBeFilled("You must supply an authcode")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply an authcode')]
     protected $authorizationCode;
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a handle for the registrant")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a handle for the registrant')]
     protected $registrant='';
 
     /**
@@ -67,11 +67,11 @@ class DomainTransferRequest extends AbstractRequest
 
     /**
      * @var string[]
-     * @MustBeFilled("You must supply nameservers in puny code")
      */
     #[Type('array<string>')]
     #[SerializedName('nameservers')]
     #[Expose]
+    #[MustBeFilled('You must supply nameservers in puny code')]
     protected $nameservers;
 
 

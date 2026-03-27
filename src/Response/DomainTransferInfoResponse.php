@@ -19,12 +19,12 @@ class DomainTransferInfoResponse extends AbstractResponse implements ResponseInt
 {
     /**
      * @var DomainTransfer
-     * @Description("The domain requested")
-     * @MustBeFilled("yes")
      */
     #[Type('Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer')]
     #[SerializedName('domain')]
     #[Expose]
+    #[Description('The domain requested')]
+    #[MustBeFilled('yes')]
     protected $transfer;
 
     /**

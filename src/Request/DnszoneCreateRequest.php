@@ -30,11 +30,11 @@ class DnszoneCreateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a name for the zone")
-     * @Description("the name should be a IDN domain in punycode format")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a name for the zone')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
 
 

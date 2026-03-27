@@ -19,12 +19,12 @@ class ContactCreateResponse extends AbstractResponse implements ResponseInterfac
 {
     /**
      * @var Contact
-     * @Description("The contact requested")
-     * @MustBeFilled("yes")
      */
     #[Type('Metaregistrar\Api\Client\Fragment\Contact\Contact')]
     #[SerializedName('contact')]
     #[Expose]
+    #[Description('The contact requested')]
+    #[MustBeFilled('yes')]
     protected $contact;
 
     /**

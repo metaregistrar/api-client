@@ -19,12 +19,12 @@ class HostInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Host
-     * @Description("The host requested")
-     * @MustBeFilled("yes")
      */
     #[Type('Metaregistrar\Api\Client\Fragment\Host\Host')]
     #[SerializedName('host')]
     #[Expose]
+    #[Description('The host requested')]
+    #[MustBeFilled('yes')]
     protected $host;
 
     /**

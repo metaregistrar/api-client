@@ -19,32 +19,32 @@ class PollResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var PollMessage[]
-     * @Description("A list of poll messages")
-     * @MustBeFilled("yes")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\PollMessage>')]
     #[SerializedName('pollMessages')]
     #[Expose]
+    #[Description('A list of poll messages')]
+    #[MustBeFilled('yes')]
     protected $pollMessages;
 
     /**
      * @var integer
-     * @Description("count of results")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[SerializedName('resultCount')]
     #[Expose]
+    #[Description('count of results')]
+    #[MustBeFilled('yes')]
     protected $resultCount;
 
     /**
      * @var integer
-     * @Description("count of total waiting poll messages")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[SerializedName('totalWaiting')]
     #[Expose]
+    #[Description('count of total waiting poll messages')]
+    #[MustBeFilled('yes')]
     protected $totalWaiting;
     /**
      * @return PollMessage[]

@@ -18,28 +18,28 @@ abstract class AbstractResponse implements ResponseInterface
 {
     /**
      * @var string
-     * @Description("The response id")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The response id')]
+    #[MustBeFilled('yes')]
     protected $responseId;
     /**
      * @var string
-     * @Description("The status of the request")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The status of the request')]
+    #[MustBeFilled('yes')]
     protected $status;
 
     /**
      * @var string
-     * @Description("The message")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The message')]
+    #[MustBeFilled('yes')]
     protected $message;
 
 

@@ -20,11 +20,11 @@ class DomainCheckResponse extends AbstractResponse implements ResponseInterface
 
     /**
      * @var CheckResult[]
-     * @Description("The results of the domain check")
-     * @MustBeFilled("yes")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\CheckResult>')]
     #[Expose]
+    #[Description('The results of the domain check')]
+    #[MustBeFilled('yes')]
     protected $results;
 
     /**

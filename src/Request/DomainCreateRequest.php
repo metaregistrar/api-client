@@ -34,19 +34,19 @@ class DomainCreateRequest extends AbstractRequest
     protected $expectedResponse = DomainCreateResponse::class;
     /**
      * @var string
-     * @MustBeFilled("You must supply a name for the domain")
-     * @Description("the name should be a IDN domain in punycode format")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a name for the domain')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name = '';
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a handle for the registrant")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a handle for the registrant')]
     protected $registrant = '';
 
     /**
@@ -60,11 +60,11 @@ class DomainCreateRequest extends AbstractRequest
 
     /**
      * @var string[]
-     * @MustBeFilled("You must supply a nameservers in in puny code")
      */
     #[Type('array<string>')]
     #[SerializedName('nameservers')]
     #[Expose]
+    #[MustBeFilled('You must supply a nameservers in in puny code')]
     protected $nameservers;
 
     /**

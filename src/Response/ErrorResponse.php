@@ -17,20 +17,20 @@ class ErrorResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var string
-     * @Description("The error code")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The error code')]
+    #[MustBeFilled('yes')]
     protected $errorCode;
 
     /**
      * @var string
-     * @Description("Tells you what is wrong")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('Tells you what is wrong')]
+    #[MustBeFilled('yes')]
     protected $errorMessage;
 
     /**

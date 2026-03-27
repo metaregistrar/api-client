@@ -18,21 +18,21 @@ class PollAckResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var integer
-     * @Description("count of total waiting poll messages")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[SerializedName('totalWaiting')]
     #[Expose]
+    #[Description('count of total waiting poll messages')]
+    #[MustBeFilled('yes')]
     protected $totalWaiting;
     /**
      * @var integer
-     * @Description("Total amount of acked poll messages")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[SerializedName('totalAffected')]
     #[Expose]
+    #[Description('Total amount of acked poll messages')]
+    #[MustBeFilled('yes')]
     protected $totalAffected;
     /**
      * @return integer

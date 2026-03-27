@@ -42,29 +42,28 @@ class HostCreateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name = '';
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a name for the domain")
-     * @Description("the name should be a IDN domain in punycode format")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('the name should be a IDN domain in punycode format')]
+    #[MustBeFilled('yes')]
     protected $hostname='';
 
 
     /**
      * @var Addr[]
-     * @MustBeFilled("yes")
-     * @Description("The Ip addresses attached to the ")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Host\Addr>')]
     #[Expose]
+    #[MustBeFilled('yes')]
+    #[Description('The Ip addresses attached to the ')]
     protected $addr = [];
 
     /**

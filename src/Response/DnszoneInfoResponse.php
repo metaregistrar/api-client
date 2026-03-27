@@ -19,12 +19,12 @@ class DnszoneInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Zone
-     * @Description("The zone requested")
-     * @MustBeFilled("yes")
      */
     #[Type('Metaregistrar\Api\Client\Fragment\Dns\Zone')]
     #[SerializedName('dnsZone')]
     #[Expose]
+    #[Description('The zone requested')]
+    #[MustBeFilled('yes')]
     protected $dnsZone;
 
     /**

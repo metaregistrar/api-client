@@ -32,9 +32,9 @@ class DomainRestoreRequest extends AbstractRequest
     protected $expectedResponse = DomainRestoreResponse::class;
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name = '';
 
 
@@ -47,10 +47,10 @@ class DomainRestoreRequest extends AbstractRequest
 
     /**
      * @var string
-     * @MustBeFilled("You must supply a reason")
      */
     #[Type('string')]
     #[Expose]
+    #[MustBeFilled('You must supply a reason')]
     protected $reason = "";
 
     /**

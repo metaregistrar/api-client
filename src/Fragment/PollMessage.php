@@ -18,55 +18,55 @@ class PollMessage
 
     /**
      * @var integer
-     * @Description("The message id")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[Expose]
+    #[Description('The message id')]
+    #[MustBeFilled('yes')]
     protected $id = 0;
     /**
      * @var string
-     * @Description("The type of message")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The type of message')]
+    #[MustBeFilled('yes')]
     protected $type = 'epp';
 
     /**
      * @var string
-     * @Description("The handler for the message")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The handler for the message')]
+    #[MustBeFilled('yes')]
     protected $handler = 'epp';
     /**
      * @var string
-     * @Description("The message")
-     * @MustBeFilled("yes")
      */
     #[Type('string')]
     #[Expose]
+    #[Description('The message')]
+    #[MustBeFilled('yes')]
     protected $message = '';
 
     /**
      * @var integer
-     * @Description("The timestamp this message was saved")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[Expose]
+    #[Description('The timestamp this message was saved')]
+    #[MustBeFilled('yes')]
     protected $timestamp;
 
 
     /**
      * @var array
-     * @Description("the data for the poll message, this is a freeform array")
-     * @MustBeFilled("yes")
      */
     #[Type('array')]
     #[Expose]
+    #[Description('the data for the poll message, this is a freeform array')]
+    #[MustBeFilled('yes')]
     protected $pollData =[];
 
     /**

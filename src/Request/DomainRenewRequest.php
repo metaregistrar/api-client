@@ -32,9 +32,9 @@ class DomainRenewRequest extends AbstractRequest
     protected $expectedResponse = DomainRenewResponse::class;
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
 
 
@@ -47,10 +47,10 @@ class DomainRenewRequest extends AbstractRequest
 
     /**
      * @var integer
-     * @MustBeFilled("You must supply a period in months")
      */
     #[Type('integer')]
     #[Expose]
+    #[MustBeFilled('You must supply a period in months')]
     protected $period=12;
 
     /**

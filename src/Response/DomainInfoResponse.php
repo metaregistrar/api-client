@@ -19,12 +19,12 @@ class DomainInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Domain
-     * @Description("The domain requested")
-     * @MustBeFilled("yes")
      */
     #[Type('Metaregistrar\Api\Client\Fragment\Domain\Domain')]
     #[SerializedName('domain')]
     #[Expose]
+    #[Description('The domain requested')]
+    #[MustBeFilled('yes')]
     protected $domain;
 
     /**

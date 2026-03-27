@@ -28,15 +28,15 @@ class HostUpdateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name = '';
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $hostname = '';
 
     /**
@@ -46,20 +46,20 @@ class HostUpdateRequest extends AbstractRequest
 
     /**
      * @var Addr[]
-     * @MustBeFilled("yes")
-     * @Description("The Ip addresses to be added")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Host\Addr>')]
     #[Expose]
+    #[MustBeFilled('yes')]
+    #[Description('The Ip addresses to be added')]
     protected $add = [];
 
     /**
      * @var Addr[]
-     * @MustBeFilled("yes")
-     * @Description("The Ip addresses to be removed")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Host\Addr>')]
     #[Expose]
+    #[MustBeFilled('yes')]
+    #[Description('The Ip addresses to be removed')]
     protected $rem = [];
     /**
      * @var array

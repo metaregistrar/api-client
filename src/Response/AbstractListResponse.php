@@ -17,11 +17,11 @@ abstract class AbstractListResponse extends AbstractResponse
 {
     /**
      * @var integer
-     * @Description("The total number of results in the list")
-     * @MustBeFilled("yes")
      */
     #[Type('integer')]
     #[Expose]
+    #[Description('The total number of results in the list')]
+    #[MustBeFilled('yes')]
     protected $listItemCount = 0;
 
     /**

@@ -31,9 +31,9 @@ class DomainTransferResendFOARequest extends AbstractRequest
     protected $expectedResponse = DomainTransferInfoResponse::class;
     /**
      * @var string
-     * @MustBeFilled("yes")
-     * @Description("the name should be a IDN domain in punycode format")
      */
+    #[MustBeFilled('yes')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
     /**
      * @var array

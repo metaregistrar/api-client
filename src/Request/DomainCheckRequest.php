@@ -31,10 +31,10 @@ class DomainCheckRequest extends AbstractRequest
     protected $expectedResponse = DomainCheckResponse::class;
     /**
      * @var string[]
-     * @Description("the name should be an array with IDN domains in punycode format")
      */
     #[Type('array<string>')]
     #[Expose]
+    #[Description('the name should be an array with IDN domains in punycode format')]
     protected $name=[];
 
     /**

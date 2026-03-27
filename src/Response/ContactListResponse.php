@@ -18,11 +18,11 @@ class ContactListResponse extends AbstractListResponse implements ResponseInterf
 {
     /**
      * @var ContactListItem[]
-     * @Description("A list of contact that match your request but with limited data")
-     * @MustBeFilled("yes")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Contact\ContactListItem>')]
     #[Expose]
+    #[Description('A list of contact that match your request but with limited data')]
+    #[MustBeFilled('yes')]
     protected $contacts;
 
     /**

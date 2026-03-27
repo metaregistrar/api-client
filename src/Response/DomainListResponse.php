@@ -18,11 +18,11 @@ class DomainListResponse extends AbstractListResponse implements ResponseInterfa
 {
     /**
      * @var DomainListItem[]
-     * @Description("A list of domains that match your request but with limited ")
-     * @MustBeFilled("yes")
      */
     #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\DomainListItem>')]
     #[Expose]
+    #[Description('A list of domains that match your request but with limited ')]
+    #[MustBeFilled('yes')]
     protected $domains;
 
     /**

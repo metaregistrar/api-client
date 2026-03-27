@@ -10,8 +10,8 @@ use JMS\Serializer\Annotation\Type;
  * Class PostalInfo
  *
  * @package Metaregistrar\Api\Client\Fragment\Contact
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class PostalInfo
 {
     const TYPE_LOC = 'loc';
@@ -19,45 +19,45 @@ class PostalInfo
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("type")
      */
+    #[Type('string')]
+    #[SerializedName('type')]
     protected $type = 'loc';
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("roid")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('roid')]
+    #[Expose]
     protected $roid;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("name")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("org")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('org')]
+    #[Expose]
     protected $org;
 
     /**
      * @var Addr
-     * @Type("Metaregistrar\Api\Client\Fragment\Contact\Addr")
-     * @SerializedName("addr")
      *
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Contact\Addr')]
+    #[SerializedName('addr')]
+    #[Expose]
     protected $addr;
 
     /**
@@ -97,18 +97,18 @@ class PostalInfo
     }
 
     /**
-     * @return \Metaregistrar\Api\Client\Fragment\Contact\Addr
+     * @return Addr
      */
-    public function getAddr(): \Metaregistrar\Api\Client\Fragment\Contact\Addr
+    public function getAddr(): Addr
     {
         return $this->addr;
     }
 
     /**
-     * @param \Metaregistrar\Api\Client\Fragment\Contact\Addr $addr
+     * @param Addr $addr
      * @return PostalInfo
      */
-    public function setAddr(\Metaregistrar\Api\Client\Fragment\Contact\Addr $addr): PostalInfo
+    public function setAddr(Addr $addr): PostalInfo
     {
         $this->addr = $addr;
         return $this;

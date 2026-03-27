@@ -10,18 +10,17 @@ use JMS\Serializer\Annotation\Type;
  * Class AuthInfo
  *
  * @package Metaregistrar\Api\Client\Fragment\Domain
- * @ExclusionPolicy("all")
-
  */
+#[ExclusionPolicy('all')]
 class AuthInfo
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("pw")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('pw')]
+    #[Expose]
     protected $pw;
 
     /**

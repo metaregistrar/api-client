@@ -2,7 +2,6 @@
 
 namespace Metaregistrar\Api\Client\Response;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
@@ -13,19 +12,19 @@ use Metaregistrar\Api\Client\Fragment\Domain\CheckResult;
 /**
  * Class DnszoneInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainCheckResponse extends AbstractResponse implements ResponseInterface
 {
 
 
     /**
      * @var CheckResult[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\CheckResult>")
      * @Description("The results of the domain check")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\CheckResult>')]
+    #[Expose]
     protected $results;
 
     /**

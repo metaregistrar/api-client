@@ -11,71 +11,71 @@ use JMS\Serializer\Annotation\Type;
  * Class CheckResult
  *
  * @package Metaregistrar\Api\Client\Fragment\Domain
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class CheckResult
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("name")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
     /**
      * @var boolean
-     * @Type("boolean")
-     * @Expose
      */
+    #[Type('boolean')]
+    #[Expose]
     protected $available;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("reason")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('reason')]
+    #[Expose]
     protected $reason;
 
     /**
      * @var integer
-     * @Type("integer")
-     * @SerializedName("defaultRegistrationPeriod")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('defaultRegistrationPeriod')]
+    #[Expose]
     protected $defaultRegistrationPeriod;
 
     /**
      * @var boolean|null
-     * @Type("boolean")
-     * @Expose
      */
+    #[Type('boolean')]
+    #[Expose]
     protected $premium;
 
     /**
      * @var float|null
-     * @Type("float")
-     * @Expose
      */
+    #[Type('float')]
+    #[Expose]
     protected $premiumPrice;
     /**
      * @var float|null
-     * @Type("float")
-     * @Expose
      */
+    #[Type('float')]
+    #[Expose]
     protected $premiumRecurringPrice;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $premiumPriceCurrency;
     /**
      * @var string|null
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $premiumPriceMessage;
 
     /**

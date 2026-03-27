@@ -12,27 +12,27 @@ use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 /**
  * Class HostInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class PollAckResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var integer
-     * @Type("integer")
      * @Description("count of total waiting poll messages")
-     * @SerializedName("totalWaiting")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('totalWaiting')]
+    #[Expose]
     protected $totalWaiting;
     /**
      * @var integer
-     * @Type("integer")
      * @Description("Total amount of acked poll messages")
-     * @SerializedName("totalAffected")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('totalAffected')]
+    #[Expose]
     protected $totalAffected;
     /**
      * @return integer

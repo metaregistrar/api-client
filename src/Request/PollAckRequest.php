@@ -2,20 +2,16 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
-use Metaregistrar\Api\Client\Annotation\MustBeFilled;
-use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Response\PollAckResponse;
 
 /**
  * Class HostInfoRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class PollAckRequest extends AbstractRequest
 {
     /**
@@ -34,9 +30,9 @@ class PollAckRequest extends AbstractRequest
 
     /**
      * @var integer[]
-     * @Type("array<integer>")
-     * @Expose
      */
+    #[Type('array<integer>')]
+    #[Expose]
     protected $pollIds=[];
 
     /**

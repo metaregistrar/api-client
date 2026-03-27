@@ -12,9 +12,9 @@ use Metaregistrar\Api\Client\Translator;
 /**
  * Class AbstractRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.NumberOfChildren)
  */
+#[ExclusionPolicy('all')]
 abstract class AbstractRequest implements RequestInterface
 {
     /**

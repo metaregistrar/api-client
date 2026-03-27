@@ -13,18 +13,18 @@ use Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer;
 /**
  * Class DnszoneInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainTransferInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var DomainTransfer
-     * @Type("Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer")
      * @Description("The domain requested")
-     * @SerializedName("domain")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer')]
+    #[SerializedName('domain')]
+    #[Expose]
     protected $transfer;
 
     /**

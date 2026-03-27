@@ -11,62 +11,62 @@ use JMS\Serializer\Annotation\XmlNamespace;
  * Class Chg
  *
  * @package Metaregistrar\Api\Client\Fragment\Domain
- * @ExclusionPolicy("all")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:epp-1.0")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:domain-1.0", prefix="domain")
  */
+#[ExclusionPolicy('all')]
+#[XmlNamespace(uri: 'urn:ietf:params:xml:ns:epp-1.0')]
+#[XmlNamespace(uri: 'urn:ietf:params:xml:ns:domain-1.0', prefix: 'domain')]
 class Chg
 {
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("registrant")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('registrant')]
+    #[Expose]
     protected $registrant;
     /**
      * @var boolean|null
-     * @Type("boolean")
-     * @SerializedName("privacy")
      *
-     * @Expose
      */
+    #[Type('boolean')]
+    #[SerializedName('privacy')]
+    #[Expose]
     protected $privacy;
 
     /**
      * @var boolean|null
-     * @Type("boolean")
-     * @SerializedName("autoRenew")
      *
-     * @Expose
      */
+    #[Type('boolean')]
+    #[SerializedName('autoRenew')]
+    #[Expose]
     protected $autoRenew;
     /**
      * @var boolean|null
-     * @Type("boolean")
-     * @SerializedName("regenerateAuthcode")
      *
-     * @Expose
      */
+    #[Type('boolean')]
+    #[SerializedName('regenerateAuthcode')]
+    #[Expose]
     protected $regenerateAuthcode;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("crmId")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('crmId')]
+    #[Expose]
     protected $crmId;
 
     /**
      * @var array|null
-     * @Type("array")
-     * @SerializedName("metadata")
      *
-     * @Expose
      */
+    #[Type('array')]
+    #[SerializedName('metadata')]
+    #[Expose]
     protected $metadata;
     /**
      * @return string|null

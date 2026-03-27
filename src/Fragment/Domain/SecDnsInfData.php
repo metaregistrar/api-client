@@ -3,24 +3,23 @@
 namespace Metaregistrar\Api\Client\Fragment\Domain;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
 
 /**
  * Class SecDnsInfData
  *
- * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.CyclomaticComplexity)
  * @SuppressWarnings(PHPMD.NPathComplexity)
  */
+#[ExclusionPolicy('all')]
 class SecDnsInfData
 {
     /**
      * @var SecDnsKeyData[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\SecDnsKeyData>")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\SecDnsKeyData>')]
+    #[Expose]
     protected $keyData=[];
 
     /**

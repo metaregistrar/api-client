@@ -12,44 +12,43 @@ use JMS\Serializer\Annotation\XmlNamespace;
  * Class Add
  *
  * @package Metaregistrar\Api\Client\Fragment\Domain
- * @ExclusionPolicy("all")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:epp-1.0")
- * @XmlNamespace(uri="urn:ietf:params:xml:ns:domain-1.0", prefix="domain")
  */
+#[ExclusionPolicy('all')]
+#[XmlNamespace(uri: 'urn:ietf:params:xml:ns:epp-1.0')]
+#[XmlNamespace(uri: 'urn:ietf:params:xml:ns:domain-1.0', prefix: 'domain')]
 class Add
 {
     /**
      * @var string[]
-     * @Type("array<string>")
-     * @SerializedName("nameservers")
-
      *
-     * @Expose
      */
+    #[Type('array<string>')]
+    #[SerializedName('nameservers')]
+    #[Expose]
     protected $nameservers;
 
     /**
      * @var DomainContact[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>')]
+    #[Expose]
     protected $contact = [];
     /**
      * @var string[]
-     * @Type("array<string>")
      *
-     * @Expose
      */
+    #[Type('array<string>')]
+    #[Expose]
     protected $status = [];
 
 
     /**
      * @var SecDnsKeyData[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\SecDnsKeyData>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\SecDnsKeyData>')]
+    #[Expose]
     protected $keyData = [];
 
     /**

@@ -13,38 +13,38 @@ use Metaregistrar\Api\Client\Fragment\PollMessage;
 /**
  * Class HostInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class PollResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var PollMessage[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\PollMessage>")
      * @Description("A list of poll messages")
-     * @SerializedName("pollMessages")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\PollMessage>')]
+    #[SerializedName('pollMessages')]
+    #[Expose]
     protected $pollMessages;
 
     /**
      * @var integer
-     * @Type("integer")
      * @Description("count of results")
-     * @SerializedName("resultCount")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('resultCount')]
+    #[Expose]
     protected $resultCount;
 
     /**
      * @var integer
-     * @Type("integer")
      * @Description("count of total waiting poll messages")
-     * @SerializedName("totalWaiting")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('totalWaiting')]
+    #[Expose]
     protected $totalWaiting;
     /**
      * @return PollMessage[]

@@ -2,23 +2,19 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
-use Metaregistrar\Api\Client\Fragment\Dns\Add;
 use Metaregistrar\Api\Client\Fragment\Dns\Content;
-use Metaregistrar\Api\Client\Fragment\Dns\Rem;
 use Metaregistrar\Api\Client\Response\DnszoneUpdateResponse;
 
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DnszoneUpdateRequest extends AbstractRequest
 {
     /**
@@ -46,18 +42,18 @@ class DnszoneUpdateRequest extends AbstractRequest
 
     /**
      * @var Content[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\Content>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\Content>')]
+    #[Expose]
     protected $add=[];
 
     /**
      * @var Content[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\Content>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\Content>')]
+    #[Expose]
     protected $rem=[];
 
     /**

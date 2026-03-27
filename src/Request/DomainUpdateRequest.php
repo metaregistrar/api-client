@@ -2,13 +2,11 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Domain\Add;
 use Metaregistrar\Api\Client\Fragment\Domain\Chg;
 use Metaregistrar\Api\Client\Fragment\Domain\Rem;
@@ -17,8 +15,8 @@ use Metaregistrar\Api\Client\Response\DomainUpdateResponse;
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainUpdateRequest extends AbstractRequest
 {
     /**
@@ -71,25 +69,25 @@ class DomainUpdateRequest extends AbstractRequest
     }
     /**
      * @var Chg
-     * @Type("Metaregistrar\Api\Client\Fragment\Domain\Chg")
      *
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Domain\Chg')]
+    #[Expose]
     protected $chg;
     /**
      * @var Add
-     * @Type("Metaregistrar\Api\Client\Fragment\Domain\Add")
      *
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Domain\Add')]
+    #[Expose]
     protected $add;
 
     /**
      * @var Rem
-     * @Type("Metaregistrar\Api\Client\Fragment\Domain\Rem")
      *
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Domain\Rem')]
+    #[Expose]
     protected $rem;
 
     /**

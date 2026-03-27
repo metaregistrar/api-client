@@ -11,58 +11,58 @@ use JMS\Serializer\Annotation\Type;
  * Class Content
  *
  * @package Metaregistrar\Api\Client\Fragment\Dns
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class Content
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("name")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("type")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('type')]
+    #[Expose]
     protected $type;
 
     /**
      * @var integer
-     * @Type("string")
-     * @SerializedName("ttl")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('ttl')]
+    #[Expose]
     protected $ttl;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("content")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('content')]
+    #[Expose]
     protected $content;
 
     /**
      * @var integer
-     * @Type("integer")
-     * @SerializedName("priority")
-     * @Expose
      */
+    #[Type('integer')]
+    #[SerializedName('priority')]
+    #[Expose]
     protected $priority = null;
 
     /**
      * @var boolean
-     * @Type("boolean")
-     * @SerializedName("disabled")
      *
-     * @Expose
      */
+    #[Type('boolean')]
+    #[SerializedName('disabled')]
+    #[Expose]
     protected $disabled = false;
 
     /**

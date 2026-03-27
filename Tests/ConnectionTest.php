@@ -2,6 +2,7 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use Mockery\Matcher\Closure;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
@@ -145,7 +146,7 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
 
         //First logRequest
         $loggingService = mockery::mock('loggingService');
-        $cibClosure = new Mockery\Matcher\Closure(function ($message) {
+        $cibClosure = new Closure(function ($message) {
             $this->assertStringStartsWith('Hosting Request:', $message);
             return true;
         });
@@ -177,11 +178,11 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
         )
         ->andThrow($exception)
         ->once();
-        $cibResponseClosure = new Mockery\Matcher\Closure(function ($message) {
+        $cibResponseClosure = new Closure(function ($message) {
             $this->assertStringContainsString('Hosting Response:', $message);
             return true;
         });
-        $paramsClosure  = new Mockery\Matcher\Closure(function ($params) {
+        $paramsClosure  = new Closure(function ($params) {
             $this->assertEquals('POST', $params['method']);
             $this->assertEquals('/dnszone', $params['url']);
             $this->assertTrue($params['exception']);

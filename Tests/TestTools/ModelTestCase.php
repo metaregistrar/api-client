@@ -2,6 +2,7 @@
 
 namespace Metaregistrar\Api\Client\Tests\TestTools;
 
+use PHPUnit\Framework\Attributes\TestDox;
 use Doctrine\Common\Annotations\AnnotationReader;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
@@ -43,9 +44,7 @@ abstract class ModelTestCase extends TestCase
             ->build();
     }
 
-    /**
-     * @testdox it serialized presentation is the same when all properties have been set
-     */
+    #[TestDox('it serialized presentation is the same when all properties have been set')]
     public function assertSerializableClass(string $className): void
     {
         $class = new ReflectionClass($className);
@@ -96,9 +95,7 @@ abstract class ModelTestCase extends TestCase
         $this->assertSame($origin, $sample);
     }
 
-    /**
-     * @testdox it returns the value when the value has been set
-     */
+    #[TestDox('it returns the value when the value has been set')]
     public function assertEntityClass(string $className): void
     {
         $class = new ReflectionClass($className);
@@ -407,17 +404,13 @@ abstract class ModelTestCase extends TestCase
         return $subDirectories;
     }
 
-    /**
-     * @testdox gets class files in directory and filters non-serializable classes
-     */
+    #[TestDox('gets class files in directory and filters non-serializable classes')]
     public function getSerializableClassFiles(array $directories): array
     {
         return $this->getClassFiles($directories, self::SERIALIZABLE);
     }
 
-    /**
-     * @testdox gets class files in directory and filters non entity classes
-     */
+    #[TestDox('gets class files in directory and filters non entity classes')]
     public function getEntityClassFiles(array $directories): array
     {
         return $this->getClassFiles($directories, self::ENTITY);

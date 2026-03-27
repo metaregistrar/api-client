@@ -2,6 +2,8 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\DataProvider;
 use DateTime;
 use DateTimeZone;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
@@ -77,10 +79,8 @@ class SerializableClassTest extends ModelTestCase
         return $files;
     }
 
-    /**
-     * @dataProvider provideSerializableClasses
-     * @testdox it validates when serialized object is equal to new object populated using setters
-     */
+    #[TestDox('it validates when serialized object is equal to new object populated using setters')]
+    #[DataProvider('provideSerializableClasses')]
     public function testSerializableClass($className): void
     {
         $this->assertSerializableClass($className);

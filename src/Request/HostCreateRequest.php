@@ -2,21 +2,19 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Host\Addr;
 use Metaregistrar\Api\Client\Response\HostCreateResponse;
 
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class HostCreateRequest extends AbstractRequest
 {
     /**
@@ -51,22 +49,22 @@ class HostCreateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @Type("string")
      * @MustBeFilled("You must supply a name for the domain")
      * @Description("the name should be a IDN domain in punycode format")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $hostname='';
 
 
     /**
      * @var Addr[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Host\Addr>")
      * @MustBeFilled("yes")
      * @Description("The Ip addresses attached to the ")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Host\Addr>')]
+    #[Expose]
     protected $addr = [];
 
     /**

@@ -13,18 +13,18 @@ use Metaregistrar\Api\Client\Fragment\Host\Host;
 /**
  * Class HostInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class HostInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Host
-     * @Type("Metaregistrar\Api\Client\Fragment\Host\Host")
      * @Description("The host requested")
-     * @SerializedName("host")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Host\Host')]
+    #[SerializedName('host')]
+    #[Expose]
     protected $host;
 
     /**

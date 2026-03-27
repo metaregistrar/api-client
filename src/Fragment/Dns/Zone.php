@@ -10,50 +10,50 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Class Zone
  * @package Metaregistrar\Api\Client\Fragment\Dns
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class Zone
 {
 
     /**
      * @var string
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $name;
 
 
     /**
      * @var boolean
-     * @Type("boolean")
-     * @Expose
      */
+    #[Type('boolean')]
+    #[Expose]
     protected $premium = false;
 
 
     /**
      * @var Content[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\Content>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\Content>')]
+    #[Expose]
     protected $records = [];
 
 
     /**
      * @var KeyData[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\KeyData>")
-     * @SerializedName("keyData")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\KeyData>')]
+    #[SerializedName('keyData')]
+    #[Expose]
     protected $keyData = [];
 
     /**
      * @var DsData[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\DsData>")
-     * @SerializedName("dsData")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\DsData>')]
+    #[SerializedName('dsData')]
+    #[Expose]
     protected $dsData = [];
 
     /**

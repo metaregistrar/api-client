@@ -3,55 +3,54 @@
 namespace Metaregistrar\Api\Client\Fragment\Domain;
 
 use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
 
 /**
  * Class Domain
  *
- * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.CyclomaticComplexity)
  * @SuppressWarnings(PHPMD.NPathComplexity)
  */
+#[ExclusionPolicy('all')]
 class DomainListItem
 {
     /**
      * @var string
-     * @Type("string")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $name = '';
 
     /**
      * @var string[]
-     * @Type("array<string>")
-     * @Expose
      */
+    #[Type('array<string>')]
+    #[Expose]
     protected $status = [];
 
     /**
      * @var boolean
-     * @Type("boolean")
      *
-     * @Expose
      */
+    #[Type('boolean')]
+    #[Expose]
     protected $autorenew = false;
 
     /**
      * @var string
-     * @Type("string")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $crmId;
     /**
      * @var array
-     * @Type("array")
      *
-     * @Expose
      */
+    #[Type('array')]
+    #[Expose]
     protected $metadata;
 
     /**

@@ -2,19 +2,16 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use Metaregistrar\Api\Client\Annotation\Description;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
-use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Response\DnszoneDeleteResponse;
 
 /**
  * Class DnszoneDeleteRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DnszoneDeleteRequest extends AbstractRequest
 {
 

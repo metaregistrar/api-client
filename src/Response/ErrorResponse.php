@@ -2,37 +2,35 @@
 
 namespace Metaregistrar\Api\Client\Response;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 
 /**
  * Class Error
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ErrorResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var string
-     * @Type("string")
      * @Description("The error code")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $errorCode;
 
     /**
      * @var string
-     * @Type("string")
      * @Description("Tells you what is wrong")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $errorMessage;
 
     /**

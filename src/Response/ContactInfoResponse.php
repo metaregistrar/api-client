@@ -13,18 +13,18 @@ use Metaregistrar\Api\Client\Fragment\Contact\Contact;
 /**
  * Class ContactInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ContactInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Contact
-     * @Type("Metaregistrar\Api\Client\Fragment\Contact\Contact")
      * @Description("The contact requested")
-     * @SerializedName("contact")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Contact\Contact')]
+    #[SerializedName('contact')]
+    #[Expose]
     protected $contact;
 
     /**

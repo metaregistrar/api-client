@@ -13,18 +13,18 @@ use Metaregistrar\Api\Client\Fragment\Dns\Zone;
 /**
  * Class DnszoneInfoResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DnszoneInfoResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var Zone
-     * @Type("Metaregistrar\Api\Client\Fragment\Dns\Zone")
      * @Description("The zone requested")
-     * @SerializedName("dnsZone")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Dns\Zone')]
+    #[SerializedName('dnsZone')]
+    #[Expose]
     protected $dnsZone;
 
     /**

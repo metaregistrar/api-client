@@ -50,7 +50,7 @@ class SerializableClassTest extends ModelTestCase
         Mockery::close();
     }
 
-    public function provideSerializableClasses(): array
+    public static function provideSerializableClasses(): array
     {
         $fragment = [
             [
@@ -59,7 +59,7 @@ class SerializableClassTest extends ModelTestCase
             ]
         ];
 
-        $subDirectories = $this->getSubdirectories($fragment);
+        $subDirectories = static::getSubdirectories($fragment);
 
         $directories = [
             ...$fragment,
@@ -74,7 +74,7 @@ class SerializableClassTest extends ModelTestCase
             ]
         ];
 
-        $files = $this->getSerializableClassFiles($directories);
+        $files = static::getSerializableClassFiles($directories);
 
         return $files;
     }
@@ -157,7 +157,7 @@ class SerializableClassTest extends ModelTestCase
         ];
     }
 
-    protected function getIgnoreClasses(): array
+    protected static function getIgnoreClasses(): array
     {
         return [];
     }

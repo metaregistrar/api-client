@@ -2,12 +2,11 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
-use Mockery\Matcher\Closure;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use  Metaregistrar\Api\Client\Connection;
+use Metaregistrar\Api\Client\Connection;
 use Metaregistrar\Api\Client\Request\DnszoneCreateRequest;
 use Metaregistrar\Api\Client\Response\DnszoneCreateResponse;
 use Mockery;
@@ -40,7 +39,7 @@ class ConnectionTest extends TestCase
 
     public function setUp(): void
     {
-        $this->hostname = 'eu.thisisfakedmarc.com';
+        $this->hostname = 'my.fakeserver.test';
         $this->token = 'totalfake2dh80h3280fh38f33*(&*';
         $this->client = Mockery::mock(Client::class);
 
@@ -98,14 +97,14 @@ class ConnectionTest extends TestCase
     public function testDebugOutputResponse(): void
     {
         $this->connection->enableDebugMode();
-        $responseArray = ['{"added": ["https://eu.dmarcadvisor.com/api/v1/domains/462097"]}'];
+        $responseArray = ['{"added": ["https://my.fakeserver.test/api/v1/domains/462097"]}'];
         $requestResponse = new Response(200, array('Content-Type' => 'application/json'), json_encode($responseArray));
         ob_start();
         $this->connection->debugOutputResponse($requestResponse);
         $output = ob_get_clean();
         $this->assertEquals(
 '
-Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/api\/v1\/domains\/462097\"]}"]
+Connection debug Response:200::["{\"added\": [\"https:\/\/my.fakeserver.test\/api\/v1\/domains\/462097\"]}"]
 ',
             $output);
     }
@@ -146,13 +145,9 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
 
         //First logRequest
         $loggingService = mockery::mock('loggingService');
-        $cibClosure = new Closure(function ($message) {
-            $this->assertStringStartsWith('Hosting Request:', $message);
-            return true;
-        });
         $loggingService->expects('log')->withArgs(
             [
-                $cibClosure,
+                Mockery::pattern('/^Hosting Request: /'),
                 200,
                 [
                     'method' => 'POST',
@@ -178,25 +173,20 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
         )
         ->andThrow($exception)
         ->once();
-        $cibResponseClosure = new Closure(function ($message) {
-            $this->assertStringContainsString('Hosting Response:', $message);
-            return true;
-        });
-        $paramsClosure  = new Closure(function ($params) {
-            $this->assertEquals('POST', $params['method']);
-            $this->assertEquals('/dnszone', $params['url']);
-            $this->assertTrue($params['exception']);
-            $this->assertEquals(500, $params['exceptionCode']);
-            $this->assertEquals('failed', $params['exceptionMessage']);
-            $this->assertEquals(500, $params['responseCode']);
-            return true;
-        });
+
         //Second logRequest
         $loggingService->expects('log')->withArgs(
             [
-                $cibResponseClosure,
+                Mockery::pattern('/^Hosting Response: /',),
                 200,
-                $paramsClosure
+                Mockery::subset([
+                    'method' => 'POST',
+                    'url' => '/dnszone',
+                    'exception' => true,
+                    'exceptionCode' => 500,
+                    'exceptionMessage' => 'failed',
+                    'responseCode' => 500
+                ])
             ]
         );
         $this->connection::setLoggingService($loggingService);
@@ -210,7 +200,7 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
         $method = DnszoneCreateResponse::class;
         $url = 'https://' . $this->hostname . '/api/v1/domain-groups/2155/add-domains/';
         $time = 1;
-        $request = new Request('GET', 'https://eu.thisisfakedmarc.com/api/v1/domains/2155', []);
+        $request = new Request('GET', 'https://my.fakeserver.test/api/v1/domains/2155', []);
         $exception = new RequestException('failed', $request);
         $response = new Response(404, []);
         $hash = '2fh320ih3r80fh-2';
@@ -226,7 +216,7 @@ Connection debug Response:200::["{\"added\": [\"https:\/\/eu.dmarcadvisor.com\/a
     {
         $this->connection::setLoggingEnabled(false);
 
-        $request = new Request('GET', 'https://eu.thisisfakedmarc.com/api/v1/domains/2155', []);
+        $request = new Request('GET', 'https://my.fakeserver.test/api/v1/domains/2155', []);
         $exception = new RequestException('failed', $request);
 
         ob_start();

@@ -2,11 +2,8 @@
 
 namespace Metaregistrar\Api\Client\Tests\TestTools;
 
-use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Expose;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
+use PHPUnit\Framework\Attributes\TestDox;
+use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
@@ -21,20 +18,11 @@ abstract class ModelTestCase extends TestCase
 {
     private const SERIALIZABLE = 'serializable';
     private const ENTITY = 'entity';
-
     private SerializerInterface $serializer;
-    protected AnnotationReader $annotationReader;
-    abstract protected function getIgnoreClasses(): array;
+    abstract static protected function getIgnoreClasses(): array;
     abstract protected function getIgnoreMethods(): array;
     abstract protected function getIgnoreProperties(): array;
     abstract protected function getDefaultValues(): array;
-
-    public function __construct(?string $name = null, array $data = [], $dataName = '')
-    {
-        $this->annotationReader = new AnnotationReader();
-
-        parent::__construct($name, $data, $dataName);
-    }
 
     public function setUp(): void
     {
@@ -43,9 +31,7 @@ abstract class ModelTestCase extends TestCase
             ->build();
     }
 
-    /**
-     * @testdox it serialized presentation is the same when all properties have been set
-     */
+    #[TestDox('it serialized presentation is the same when all properties have been set')]
     public function assertSerializableClass(string $className): void
     {
         $class = new ReflectionClass($className);
@@ -96,9 +82,7 @@ abstract class ModelTestCase extends TestCase
         $this->assertSame($origin, $sample);
     }
 
-    /**
-     * @testdox it returns the value when the value has been set
-     */
+    #[TestDox('it returns the value when the value has been set')]
     public function assertEntityClass(string $className): void
     {
         $class = new ReflectionClass($className);
@@ -214,7 +198,7 @@ abstract class ModelTestCase extends TestCase
     {
         try {
             $reflection = new ReflectionMethod($className, $method);
-        } catch (ReflectionException $exception) {
+        } catch (ReflectionException) {
             return false;
         }
 
@@ -300,7 +284,7 @@ abstract class ModelTestCase extends TestCase
                 }
 
                 $data[$propertyName] = $defaults[$column['type']];
-            } catch (ReflectionException $exception) {
+            } catch (ReflectionException) {
             }
         }
 
@@ -309,28 +293,31 @@ abstract class ModelTestCase extends TestCase
 
     private function getDoctrineProperty(ReflectionProperty $property): array
     {
-        $column = $this->annotationReader->getPropertyAnnotation($property, 'Doctrine\ORM\Mapping\Column');
+        $attributes = $property->getAttributes('Doctrine\ORM\Mapping\Column');
 
-        if ($column === null) {
+        if (empty($attributes)) {
             throw new RuntimeException("unknown datatype for: $property->class::". $property->getName());
         }
 
-        return ['name' => $property->getName(), 'type' => $column->type];
+        $column = $attributes[0]->newInstance();
+
+        return ['name' => $column->name, 'type' => $column->type];
     }
 
-    protected function isClassAnEntity(ReflectionClass $class): bool
+    protected static function isClassAnEntity(ReflectionClass $class): bool
     {
-        return (bool)$this->annotationReader->getClassAnnotation($class, '\Doctrine\ORM\Mapping\Entity');
+        $attributes = $class->getAttributes('\Doctrine\ORM\Mapping\Entity');
+        return !empty($attributes);
     }
 
-    protected function isClassSerializable(ReflectionClass $class): bool
+    protected static function isClassSerializable(ReflectionClass $class): bool
     {
         $properties = $class->getProperties();
 
         foreach ($properties as $property) {
-            $serializedType = $this->annotationReader->getPropertyAnnotation($property, Type::class);
+            $attributes = $property->getAttributes(Serializer\Type::class);
 
-            if ($serializedType !== null) {
+            if (!empty($attributes)) {
                 return true;
             }
         }
@@ -340,22 +327,22 @@ abstract class ModelTestCase extends TestCase
 
     private function isPropertyExposed(ReflectionProperty $property): bool
     {
-        $policy = $this->annotationReader->getClassAnnotation($property->getDeclaringClass(), ExclusionPolicy::class);
+        $attributes = $property->getDeclaringClass()->getAttributes(Serializer\ExclusionPolicy::class);
 
-        if ($policy === null || $policy->policy !== ExclusionPolicy::ALL) {
+        if (empty($attributes) || $attributes[0]->newInstance()->policy !== Serializer\ExclusionPolicy::ALL) {
             return false;
         }
 
-        $expose = $this->annotationReader->getPropertyAnnotation($property, Expose::class);
+        $attributes = $property->getAttributes(Serializer\Expose::class);
 
-        return $expose !== null;
+        return !empty($attributes);
     }
 
     private function hasPropertyDatatype(ReflectionProperty $property): bool
     {
         try {
             $this->getSerializedProperty($property);
-        } catch (RuntimeException $e) {
+        } catch (RuntimeException) {
             return false;
         }
 
@@ -365,22 +352,23 @@ abstract class ModelTestCase extends TestCase
     private function getSerializedProperty(ReflectionProperty $property): array
     {
         $propertyName = $property->getName();
-        $serializedType = $this->annotationReader->getPropertyAnnotation($property, Type::class);
+        $attributes = $property->getAttributes(Serializer\Type::class);
 
-        if ($serializedType === null) {
+        if (empty($attributes)) {
             throw new RuntimeException("unknown datatype for: $property->class::$propertyName");
         }
+        $serializedType = $attributes[0]->newInstance();
 
-        $serializedName = $this->annotationReader->getPropertyAnnotation($property, SerializedName::class);
+        $attributes = $property->getAttributes(Serializer\SerializedName::class);
 
-        if ($serializedName !== null) {
-            $propertyName = $serializedName->name;
+        if (!empty($attributes)) {
+            $propertyName = $attributes[0]->newInstance()->name;
         }
 
         return ['name' => $propertyName, 'type' => $serializedType->name];
     }
 
-    public function getSubdirectories(array $directories): array
+    public static function getSubdirectories(array $directories): array
     {
         $subDirectories = [];
 
@@ -407,26 +395,19 @@ abstract class ModelTestCase extends TestCase
         return $subDirectories;
     }
 
-    /**
-     * @testdox gets class files in directory and filters non-serializable classes
-     */
-    public function getSerializableClassFiles(array $directories): array
+    #[TestDox('gets class files in directory and filters non-serializable classes')]
+    public static function getSerializableClassFiles(array $directories): array
     {
-        return $this->getClassFiles($directories, self::SERIALIZABLE);
+        return self::getClassFiles($directories, self::SERIALIZABLE);
     }
 
-    /**
-     * @testdox gets class files in directory and filters non entity classes
-     */
-    public function getEntityClassFiles(array $directories): array
+    #[TestDox('gets class files in directory and filters non entity classes')]
+    public static function getEntityClassFiles(array $directories): array
     {
-        return $this->getClassFiles($directories, self::ENTITY);
+        return self::getClassFiles($directories, self::ENTITY);
     }
 
-    /**
-     * @deprecated use getEntityClassFiles or getSerializableClassFiles to obtain filtered files
-     */
-    protected function getClassFiles(array $directories, ?string $type = null): array
+    private static function getClassFiles(array $directories, ?string $type = null): array
     {
         $files = [];
 
@@ -446,7 +427,7 @@ abstract class ModelTestCase extends TestCase
 
                 $class = basename($filepath, '.php');
                 $className = $directory['namespace'] . $class;
-                if (!class_exists($className) || in_array($className, $this->getIgnoreClasses())) {
+                if (!class_exists($className) || in_array($className, static::getIgnoreClasses())) {
                     continue;
                 }
 
@@ -455,11 +436,11 @@ abstract class ModelTestCase extends TestCase
                     continue;
                 }
 
-                if ($type === self::SERIALIZABLE && !$this->isClassSerializable($reflectionClass)) {
+                if ($type === self::SERIALIZABLE && !static::isClassSerializable($reflectionClass)) {
                     continue;
                 }
 
-                if ($type === self::ENTITY && !$this->isClassAnEntity($reflectionClass)) {
+                if ($type === self::ENTITY && !static::isClassAnEntity($reflectionClass)) {
                     continue;
                 }
 

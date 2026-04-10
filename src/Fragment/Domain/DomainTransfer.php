@@ -10,44 +10,44 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Class Domain
  *
- * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.CyclomaticComplexity)
  * @SuppressWarnings(PHPMD.NPathComplexity)
  */
+#[ExclusionPolicy('all')]
 class DomainTransfer
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("name")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
     /**
      * @var string
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $reID;
     /**
      * @var string
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $reDate;
     /**
      * @var string
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $acDate;
 
     /**
      * @var string
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $exDate;
 
     /**

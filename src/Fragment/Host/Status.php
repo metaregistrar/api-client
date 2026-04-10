@@ -11,34 +11,34 @@ use JMS\Serializer\Annotation\Type;
  * Class Status
  *
  * @package Metaregistrar\Api\Client\Fragment\Host
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class Status
 {
     /**
      * @var string
-     * @Type("string")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $status;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("s")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('s')]
+    #[Expose]
     protected $s;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("lang")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('lang')]
+    #[Expose]
     protected $lang;
 
     /**

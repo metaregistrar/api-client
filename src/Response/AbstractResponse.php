@@ -7,40 +7,39 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 
 /**
  * Class HostingCreateResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  * @SuppressWarnings(PHPMD.NumberOfChildren)
  */
+#[ExclusionPolicy('all')]
 abstract class AbstractResponse implements ResponseInterface
 {
     /**
      * @var string
-     * @Type("string")
-     * @Description("The response id")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The response id')]
+    #[MustBeFilled('yes')]
     protected $responseId;
     /**
      * @var string
-     * @Type("string")
-     * @Description("The status of the request")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The status of the request')]
+    #[MustBeFilled('yes')]
     protected $status;
 
     /**
      * @var string
-     * @Type("string")
-     * @Description("The message")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The message')]
+    #[MustBeFilled('yes')]
     protected $message;
 
 

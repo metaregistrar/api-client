@@ -12,17 +12,17 @@ use Metaregistrar\Api\Client\Fragment\Contact\ContactListItem;
 /**
  * Class Error
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ContactListResponse extends AbstractListResponse implements ResponseInterface
 {
     /**
      * @var ContactListItem[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Contact\ContactListItem>")
-     * @Description("A list of contact that match your request but with limited data")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Contact\ContactListItem>')]
+    #[Expose]
+    #[Description('A list of contact that match your request but with limited data')]
+    #[MustBeFilled('yes')]
     protected $contacts;
 
     /**

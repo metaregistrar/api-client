@@ -2,8 +2,8 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Metaregistrar\Api\Client\Request\AbstractRequest;
-use Metaregistrar\Api\Client\Request\RequestInterface;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -66,9 +66,7 @@ class RequestUrlTest extends TestCase
         return $files;
     }
 
-    /**
-     * @dataProvider provideRequestClasses
-     */
+    #[DataProvider('provideRequestClasses')]
     public function testUrlIsParsed(string $className): void
     {
 

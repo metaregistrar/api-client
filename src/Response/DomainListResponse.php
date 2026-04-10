@@ -12,17 +12,17 @@ use Metaregistrar\Api\Client\Fragment\Domain\DomainListItem;
 /**
  * Class Error
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainListResponse extends AbstractListResponse implements ResponseInterface
 {
     /**
      * @var DomainListItem[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\DomainListItem>")
-     * @Description("A list of domains that match your request but with limited ")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\DomainListItem>')]
+    #[Expose]
+    #[Description('A list of domains that match your request but with limited ')]
+    #[MustBeFilled('yes')]
     protected $domains;
 
     /**

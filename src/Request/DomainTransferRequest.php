@@ -8,15 +8,14 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Domain\DomainContact;
 use Metaregistrar\Api\Client\Response\DomainTransferResponse;
 
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainTransferRequest extends AbstractRequest
 {
     /**
@@ -35,44 +34,44 @@ class DomainTransferRequest extends AbstractRequest
     protected $expectedResponse = DomainTransferResponse::class;
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply a name for the domain")
-     * @Description("the name should be a IDN domain in punycode format")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply a name for the domain')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
 
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply an authcode")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply an authcode')]
     protected $authorizationCode;
 
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply a handle for the registrant")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply a handle for the registrant')]
     protected $registrant='';
 
     /**
      * @var DomainContact[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>")
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>')]
+    #[Expose]
     protected $contact = [];
 
 
     /**
      * @var string[]
-     * @Type("array<string>")
-     * @SerializedName("nameservers")
-     * @MustBeFilled("You must supply nameservers in puny code")
-     * @Expose
      */
+    #[Type('array<string>')]
+    #[SerializedName('nameservers')]
+    #[Expose]
+    #[MustBeFilled('You must supply nameservers in puny code')]
     protected $nameservers;
 
 

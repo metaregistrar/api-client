@@ -10,63 +10,63 @@ use Metaregistrar\Api\Client\Annotation\Description;
 
 /**
  * @package Metaregistrar\Api\Client\Fragment
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class PollMessage
 {
 
 
     /**
      * @var integer
-     * @Type("integer")
-     * @Description("The message id")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[Expose]
+    #[Description('The message id')]
+    #[MustBeFilled('yes')]
     protected $id = 0;
     /**
      * @var string
-     * @Type("string")
-     * @Description("The type of message")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The type of message')]
+    #[MustBeFilled('yes')]
     protected $type = 'epp';
 
     /**
      * @var string
-     * @Type("string")
-     * @Description("The handler for the message")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The handler for the message')]
+    #[MustBeFilled('yes')]
     protected $handler = 'epp';
     /**
      * @var string
-     * @Type("string")
-     * @Description("The message")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[Description('The message')]
+    #[MustBeFilled('yes')]
     protected $message = '';
 
     /**
      * @var integer
-     * @Type("integer")
-     * @Description("The timestamp this message was saved")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[Expose]
+    #[Description('The timestamp this message was saved')]
+    #[MustBeFilled('yes')]
     protected $timestamp;
 
 
     /**
      * @var array
-     * @Type("array")
-     * @Description("the data for the poll message, this is a freeform array")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('array')]
+    #[Expose]
+    #[Description('the data for the poll message, this is a freeform array')]
+    #[MustBeFilled('yes')]
     protected $pollData =[];
 
     /**

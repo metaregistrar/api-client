@@ -2,6 +2,7 @@
 
 namespace Metaregistrar\Api\Client\Fragment\Host;
 
+use DateTime;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
@@ -9,69 +10,68 @@ use JMS\Serializer\Annotation\Type;
 
 /**
  * Class Host
- *
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class Host
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("name")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("roid")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('roid')]
+    #[Expose]
     protected $roid;
 
     /**
      * @var string[]
-     * @Type("array")
      *
-     * @Expose
      */
+    #[Type('array')]
+    #[Expose]
     protected $status = [];
 
     /**
      * @var Addr[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Host\Addr>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Host\Addr>')]
+    #[Expose]
     protected $addr = [];
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("clID")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('clID')]
+    #[Expose]
     protected $clId;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("crID")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('crID')]
+    #[Expose]
     protected $crId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
-     * @SerializedName("crDate")
-     * @expose
+     * @var DateTime
      */
+    #[Type('DateTime')]
+    #[SerializedName('crDate')]
+    #[Expose]
     protected $crDate;
 
     /**
@@ -156,7 +156,7 @@ class Host
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
     public function getCrDate()
     {
@@ -164,7 +164,7 @@ class Host
     }
 
     /**
-     * @param \DateTime|null $crDate
+     * @param DateTime|null $crDate
      * @return Host
      */
     public function setCrDate($crDate)

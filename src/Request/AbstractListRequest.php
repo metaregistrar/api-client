@@ -6,8 +6,8 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /**
  * The AbstractRequest containing the way to serialize and deserialize requests
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 abstract class AbstractListRequest extends AbstractRequest
 {
 

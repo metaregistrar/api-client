@@ -9,8 +9,8 @@ use Metaregistrar\Api\Client\Response\ContactDeleteResponse;
 /**
  * Class HostInfoRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ContactDeleteRequest extends AbstractRequest
 {
     /**

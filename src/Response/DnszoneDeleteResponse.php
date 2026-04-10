@@ -7,8 +7,8 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 /**
  * Class DnszoneDeleteResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DnszoneDeleteResponse extends AbstractResponse implements ResponseInterface
 {
 

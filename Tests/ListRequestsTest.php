@@ -2,6 +2,7 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Metaregistrar\Api\Client\Request\AbstractListRequest;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
@@ -54,9 +55,7 @@ class ListRequestsTest extends TestCase
         return $files;
     }
 
-    /**
-     * @dataProvider provideListRequests
-     */
+    #[DataProvider('provideListRequests')]
     public function testQueryString(string $className): void
     {
         $query = [];

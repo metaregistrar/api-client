@@ -8,48 +8,48 @@ use JMS\Serializer\Annotation\Type;
 
 /**
  * Class DsData
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DsData
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("keyTag")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('keyTag')]
+    #[Expose]
     protected $keyTag;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("alg")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('alg')]
+    #[Expose]
     protected $alg;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("digestType")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('digestType')]
+    #[Expose]
     protected $digestType;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("digest")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('digest')]
+    #[Expose]
     protected $digest;
 
     /**
      * @var KeyData
-     * @Type("Metaregistrar\Api\Client\Fragment\Dns\KeyData")
-     * @SerializedName("keyData")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Dns\KeyData')]
+    #[SerializedName('keyData')]
+    #[Expose]
     protected $keyData;
 
     /**

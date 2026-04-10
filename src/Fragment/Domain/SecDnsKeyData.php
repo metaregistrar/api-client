@@ -8,40 +8,40 @@ use JMS\Serializer\Annotation\Type;
 
 /**
  * Class SecDnsKeyData
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class SecDnsKeyData
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("flags")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('flags')]
+    #[Expose]
     protected $flags;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("protocol")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('protocol')]
+    #[Expose]
     protected $protocol;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("alg")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('alg')]
+    #[Expose]
     protected $alg;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("pubKey")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('pubKey')]
+    #[Expose]
     protected $pubKey;
 
     /**

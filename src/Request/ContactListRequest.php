@@ -8,8 +8,8 @@ use Metaregistrar\Api\Client\Response\ContactListResponse;
 /**
  * Class DomainListRequest
  * @package Metaregistrar\Api\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ContactListRequest extends AbstractListRequest
 {
     /**

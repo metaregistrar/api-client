@@ -2,21 +2,19 @@
 
 namespace Metaregistrar\Api\Client\Request;
 
-use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Dns\Content;
 use Metaregistrar\Api\Client\Response\DnszoneCreateResponse;
 
 /**
  * Class DnszoneCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DnszoneCreateRequest extends AbstractRequest
 {
 
@@ -32,28 +30,28 @@ class DnszoneCreateRequest extends AbstractRequest
 
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply a name for the zone")
-     * @Description("the name should be a IDN domain in punycode format")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply a name for the zone')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name='';
 
 
     /**
      * @var boolean
-     * @Type("boolean")
-     * @Expose
      */
+    #[Type('boolean')]
+    #[Expose]
     protected $premium = false;
 
 
     /**
      * @var Content[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Dns\Content>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Dns\Content>')]
+    #[Expose]
     protected $records = [];
 
 

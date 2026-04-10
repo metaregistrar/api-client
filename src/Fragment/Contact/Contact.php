@@ -2,6 +2,7 @@
 
 namespace Metaregistrar\Api\Client\Fragment\Contact;
 
+use DateTime;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Expose;
@@ -10,141 +11,141 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Class Contact
  *
- * @package Metaregistrar\Api\Client\Fragment\Contact
- * @ExclusionPolicy("all")
+ * @package Metaregistrar\Api\Client\Fragmentw\Contact
  */
+#[ExclusionPolicy('all')]
 class Contact
 {
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("id")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('id')]
+    #[Expose]
     protected $id;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("roid")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('roid')]
+    #[Expose]
     protected $roid;
 
     /**
      * @var string[]
-     * @Type("array")
      *
-     * @Expose
      */
+    #[Type('array')]
+    #[Expose]
     protected $status;
 
     /**
      * @var PostalInfo
-     * @Type("Metaregistrar\Api\Client\Fragment\Contact\PostalInfo")
-     * @SerializedName("postalInfo")
      *
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Contact\PostalInfo')]
+    #[SerializedName('postalInfo')]
+    #[Expose]
     protected $postalInfo;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("voice")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('voice')]
+    #[Expose]
     protected $voice;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("fax")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('fax')]
+    #[Expose]
     protected $fax;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("email")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('email')]
+    #[Expose]
     protected $email;
 
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("clID")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('clID')]
+    #[Expose]
     protected $clId;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("crID")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('crID')]
+    #[Expose]
     protected $crId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
-     * @SerializedName("crDate")
-     * @expose
+     * @var DateTime
      */
+    #[Type('DateTime')]
+    #[SerializedName('crDate')]
+    #[Expose]
     protected $crDate;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("upID")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('upID')]
+    #[Expose]
     protected $upId;
 
     /**
-     * @var \DateTime
-     * @Type("DateTime")
-     * @SerializedName("upDate")
-     * @expose
+     * @var DateTime
      */
+    #[Type('DateTime')]
+    #[SerializedName('upDate')]
+    #[Expose]
     protected $upDate;
 
     /**
      * @var ContactProperty[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Contact\ContactProperty>")
-     * @SerializedName("property")
-     * @expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Contact\ContactProperty>')]
+    #[SerializedName('property')]
+    #[Expose]
     protected $property;
 
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("crmId")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('crmId')]
+    #[Expose]
     protected $crmId;
 
     /**
      * @var array
-     * @Type("array")
-     * @SerializedName("metadata")
-     * @expose
      */
+    #[Type('array')]
+    #[SerializedName('metadata')]
+    #[Expose]
     protected $metadata;
 
     /**
@@ -318,18 +319,18 @@ class Contact
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getCrDate(): \DateTime
+    public function getCrDate(): DateTime
     {
         return $this->crDate;
     }
 
     /**
-     * @param \DateTime $crDate
+     * @param DateTime $crDate
      * @return Contact
      */
-    public function setCrDate(\DateTime $crDate): Contact
+    public function setCrDate(DateTime $crDate): Contact
     {
         $this->crDate = $crDate;
         return $this;
@@ -354,18 +355,18 @@ class Contact
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getUpDate(): \DateTime
+    public function getUpDate(): DateTime
     {
         return $this->upDate;
     }
 
     /**
-     * @param \DateTime $upDate
+     * @param DateTime $upDate
      * @return Contact
      */
-    public function setUpDate(\DateTime $upDate): Contact
+    public function setUpDate(DateTime $upDate): Contact
     {
         $this->upDate = $upDate;
         return $this;

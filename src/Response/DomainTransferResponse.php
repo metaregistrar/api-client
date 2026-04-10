@@ -8,24 +8,23 @@ use JMS\Serializer\Annotation\Expose;
 use JMS\Serializer\Annotation\Type;
 use Metaregistrar\Api\Client\Annotation\Description;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
-use Metaregistrar\Api\Client\Fragment\Domain\Domain;
 use Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer;
 
 /**
  * Class DomainTransferResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainTransferResponse extends AbstractResponse implements ResponseInterface
 {
     /**
      * @var DomainTransfer
-     * @Type("Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer")
-     * @Description("The domain requested")
-     * @SerializedName("domain")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer')]
+    #[SerializedName('domain')]
+    #[Expose]
+    #[Description('The domain requested')]
+    #[MustBeFilled('yes')]
     protected $transfer;
 
     /**

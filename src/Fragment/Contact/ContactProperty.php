@@ -8,31 +8,31 @@ use JMS\Serializer\Annotation\Type;
 
 /**
  * Class ContactProperty
- * @ExclusionPolicy("all")
  *
  */
+#[ExclusionPolicy('all')]
 class ContactProperty
 {
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("registry")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('registry')]
+    #[Expose]
     protected $registry;
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("name")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('name')]
+    #[Expose]
     protected $name;
     /**
      * @var string
-     * @Type("string")
-     * @SerializedName("value")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('value')]
+    #[Expose]
     protected $value;
 
     /**

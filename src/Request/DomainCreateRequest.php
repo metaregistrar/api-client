@@ -8,15 +8,14 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Domain\DomainContact;
 use Metaregistrar\Api\Client\Response\DomainCreateResponse;
 
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class DomainCreateRequest extends AbstractRequest
 {
     /**
@@ -35,50 +34,50 @@ class DomainCreateRequest extends AbstractRequest
     protected $expectedResponse = DomainCreateResponse::class;
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply a name for the domain")
-     * @Description("the name should be a IDN domain in punycode format")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply a name for the domain')]
+    #[Description('the name should be a IDN domain in punycode format')]
     protected $name = '';
 
     /**
      * @var string
-     * @Type("string")
-     * @MustBeFilled("You must supply a handle for the registrant")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
+    #[MustBeFilled('You must supply a handle for the registrant')]
     protected $registrant = '';
 
     /**
      * @var DomainContact[]
-     * @Type("array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>")
      *
-     * @Expose
      */
+    #[Type('array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>')]
+    #[Expose]
     protected $contact = [];
 
 
     /**
      * @var string[]
-     * @Type("array<string>")
-     * @SerializedName("nameservers")
-     * @MustBeFilled("You must supply a nameservers in in puny code")
-     * @Expose
      */
+    #[Type('array<string>')]
+    #[SerializedName('nameservers')]
+    #[Expose]
+    #[MustBeFilled('You must supply a nameservers in in puny code')]
     protected $nameservers;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @Expose
      */
+    #[Type('string')]
+    #[Expose]
     protected $crmId;
     /**
      * @var array|null
-     * @Type("array")
-     * @Expose
      */
+    #[Type('array')]
+    #[Expose]
     protected $metadata;
 
     /**

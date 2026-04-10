@@ -2,15 +2,12 @@
 
 namespace Metaregistrar\Api\Client\Annotation;
 
-/**
- * @Annotation
- * @Target({"PROPERTY", "METHOD","ANNOTATION"})
- */
+use Attribute;
+
+#[Attribute(Attribute::TARGET_PROPERTY)]
 final class DefaultValue
 {
-    /**
-     * @var string
-     * @Required
-     */
-    public $value;
+    public function __construct(public string $value)
+    {
+    }
 }

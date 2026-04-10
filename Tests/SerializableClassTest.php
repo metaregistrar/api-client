@@ -2,6 +2,8 @@
 
 namespace Metaregistrar\Api\Client\Tests;
 
+use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\DataProvider;
 use DateTime;
 use DateTimeZone;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
@@ -48,7 +50,7 @@ class SerializableClassTest extends ModelTestCase
         Mockery::close();
     }
 
-    public function provideSerializableClasses(): array
+    public static function provideSerializableClasses(): array
     {
         $fragment = [
             [
@@ -57,7 +59,7 @@ class SerializableClassTest extends ModelTestCase
             ]
         ];
 
-        $subDirectories = $this->getSubdirectories($fragment);
+        $subDirectories = static::getSubdirectories($fragment);
 
         $directories = [
             ...$fragment,
@@ -72,15 +74,13 @@ class SerializableClassTest extends ModelTestCase
             ]
         ];
 
-        $files = $this->getSerializableClassFiles($directories);
+        $files = static::getSerializableClassFiles($directories);
 
         return $files;
     }
 
-    /**
-     * @dataProvider provideSerializableClasses
-     * @testdox it validates when serialized object is equal to new object populated using setters
-     */
+    #[TestDox('it validates when serialized object is equal to new object populated using setters')]
+    #[DataProvider('provideSerializableClasses')]
     public function testSerializableClass($className): void
     {
         $this->assertSerializableClass($className);
@@ -131,7 +131,7 @@ class SerializableClassTest extends ModelTestCase
             'Metaregistrar\Api\Client\Fragment\Dns\Zone' => $zone,
             'Metaregistrar\Api\Client\Fragment\Domain\Add' => (new Add())->setNameservers(['pri.mary', 'sec.ondary']),
             'Metaregistrar\Api\Client\Fragment\Domain\Chg' => (new Chg())->setRegistrant('test user A'),
-            'Metaregistrar\Api\Client\Fragment\Domain\Domain' => (new Domain())->setName('test-domain.ai'),
+            'Metaregistrar\Api\Client\Fragment\Domain\Domain' => (new Domain())->setName('my-domain.test'),
             'Metaregistrar\Api\Client\Fragment\Domain\DomainTransfer' => (new DomainTransfer())->setName('transfer.me'),
             'Metaregistrar\Api\Client\Fragment\Domain\Rem' => (new Rem())->setStatus(['provisioning']),
             'Metaregistrar\Api\Client\Fragment\Host\Host' => (new Host())->setRoid('ro-id-1'),
@@ -144,7 +144,7 @@ class SerializableClassTest extends ModelTestCase
             'array<Metaregistrar\Api\Client\Fragment\Dns\KeyData>' => [$keyData],
             'array<Metaregistrar\Api\Client\Fragment\Domain\CheckResult>' => [(new CheckResult())->setReason('really good')],
             'array<Metaregistrar\Api\Client\Fragment\Domain\DomainContact>' => [new DomainContact(10, 'public')],
-            'array<Metaregistrar\Api\Client\Fragment\Domain\DomainHost>' => [(new DomainHost())->setName('www.com')],
+            'array<Metaregistrar\Api\Client\Fragment\Domain\DomainHost>' => [(new DomainHost())->setName('local.test')],
             'array<Metaregistrar\Api\Client\Fragment\Domain\SecDnsKeyData>' => [(new SecDnsKeyData())->setProtocol('TCP')],
             'array<Metaregistrar\Api\Client\Fragment\Host\Addr>' => [(new HostAddr())->setIpAddress('123.456.789.981')],
             'array<Metaregistrar\Api\Client\Fragment\PollMessage>' => [$pollMessage],
@@ -157,7 +157,7 @@ class SerializableClassTest extends ModelTestCase
         ];
     }
 
-    protected function getIgnoreClasses(): array
+    protected static function getIgnoreClasses(): array
     {
         return [];
     }

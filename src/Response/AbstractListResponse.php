@@ -11,17 +11,17 @@ use Metaregistrar\Api\Client\Annotation\MustBeFilled;
 /**
  * Class HostingCreateResponse
  * @package Metaregistrar\Api\Client\Response
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 abstract class AbstractListResponse extends AbstractResponse
 {
     /**
      * @var integer
-     * @Type("integer")
-     * @Description("The total number of results in the list")
-     * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('integer')]
+    #[Expose]
+    #[Description('The total number of results in the list')]
+    #[MustBeFilled('yes')]
     protected $listItemCount = 0;
 
     /**

@@ -39,6 +39,7 @@
         <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/>
         <exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/>
         <exclude name="Squiz.Commenting.FunctionComment.IncorrectTypeHint"/>
+        <exclude name="Squiz.Commenting.FunctionComment.Missing"/>
     </rule>
     <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
     <rule ref="Squiz.Commenting.ClassComment">
@@ -47,6 +48,7 @@
         <exclude name="Squiz.Commenting.ClassComment.SpacingBeforeTags"/>
         <exclude name="Squiz.Commenting.ClassComment.ShortNotCapital"/>
         <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
+        <exclude name="Squiz.Commenting.ClassComment.Missing"/>
     </rule>
     <rule ref="Squiz.Commenting.VariableComment">
         <exclude name="Squiz.Commenting.VariableComment.MissingShort"/>

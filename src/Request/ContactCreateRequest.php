@@ -3,21 +3,18 @@
 namespace Metaregistrar\Api\Client\Request;
 
 use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
 use Metaregistrar\Api\Client\Annotation\MustBeFilled;
-use Metaregistrar\Api\Client\Annotation\Description;
-use Metaregistrar\Api\Client\Annotation\DefaultValue;
 use Metaregistrar\Api\Client\Fragment\Contact\PostalInfo;
 use Metaregistrar\Api\Client\Response\ContactCreateResponse;
 
 /**
  * Class DomainListingCreateRequest
  * @package Metaregistrar\Api\Client\Request
- * @ExclusionPolicy("all")
  */
+#[ExclusionPolicy('all')]
 class ContactCreateRequest extends AbstractRequest
 {
     /**
@@ -36,54 +33,54 @@ class ContactCreateRequest extends AbstractRequest
     protected $expectedResponse = ContactCreateResponse::class;
     /**
      * @var PostalInfo
-     * @Type("Metaregistrar\Api\Client\Fragment\Contact\PostalInfo")
-     * @SerializedName("postalInfo")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('Metaregistrar\Api\Client\Fragment\Contact\PostalInfo')]
+    #[SerializedName('postalInfo')]
+    #[Expose]
     protected $postalInfo;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("voice")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('voice')]
+    #[Expose]
     protected $voice;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("fax")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('fax')]
+    #[Expose]
     protected $fax;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("email")
      * @MustBeFilled("yes")
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('email')]
+    #[Expose]
     protected $email;
 
     /**
      * @var string|null
-     * @Type("string")
-     * @SerializedName("crmId")
      *
-     * @Expose
      */
+    #[Type('string')]
+    #[SerializedName('crmId')]
+    #[Expose]
     protected $crmId;
 
     /**
      * @var array|null
-     * @Type("array")
-     * @SerializedName("metadata")
-     * @Expose
      */
+    #[Type('array')]
+    #[SerializedName('metadata')]
+    #[Expose]
     protected $metadata;
 
     /**

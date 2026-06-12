@@ -1,6 +1,6 @@
 {
     "name": "metaregistrar/api-client",
-    "version": "1.0.14",
+    "version": "2.0.0",
     "description": "Provides connectivity with the Metaregistrar rest api",
     "license": "proprietary",
     "keywords": [
@@ -20,13 +20,12 @@
         }
     ],
     "require": {
-        "php": "~8.2",
+        "php": "^8.2",
         "ext-intl": "*",
         "ext-json": "*",
         "guzzlehttp/guzzle": "~6|^7.2",
         "jms/serializer": "^3.1",
-        "monolog/monolog": "^3.7",
-        "webdevvie/nestis": "^1.0"
+        "monolog/monolog": "^3.7"
     },
     "require-dev": {
         "mikey179/vfsstream": "^1.6",
